@@ -1,5 +1,5 @@
 const initialiseSocket = () => {
-    const socket = io("http://localhost:5000");
+    const socket = io("http://127.0.0.1:5000");
 
     socket.on("connect", function() {
         console.log("Connected to the server");

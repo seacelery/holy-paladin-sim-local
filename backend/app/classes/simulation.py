@@ -6,8 +6,6 @@ import copy
 import time
 import cProfile
 import json
-import objgraph
-import psutil
 from flask_socketio import emit
 
 
@@ -21,11 +19,6 @@ from .priority_list_dsl import parse_condition, condition_to_lambda
 from .simulation_state import check_cancellation, reset_simulation
 
 pp = pprint.PrettyPrinter(width=200)
-
-def monitor_memory():
-    process = psutil.Process()
-    memory_use = process.memory_info().rss / (1024 * 1024)
-    return memory_use
 
 class Simulation:
     
@@ -1465,11 +1458,6 @@ class Simulation:
         }
     
         print(self.paladin.holy_shock_resets)
-        
-        # objgraph.show_most_common_types()
-        
-        # end_memory = monitor_memory()
-        # print(f"Memory at end: {end_memory} MB")
 
         return {"results": full_results, "simulation_details": simulation_details}
         
