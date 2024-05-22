@@ -1,6 +1,6 @@
 from .spells import Spell
 from .auras_buffs import ElementalPotionOfUltimatePowerBuff, AuraMasteryBuff
-from ..utils.misc_functions import increment_holy_power, update_spell_holy_power_gain, update_mana_gained
+from ..utils.misc_functions import increment_holy_power, update_mana_gained
 
 
 class AuraMastery(Spell):

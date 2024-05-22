@@ -1,10 +1,8 @@
 import random
 
 from .auras import Debuff
-from ..utils.misc_functions import append_spell_heal_event, format_time, append_aura_stacks_decremented, append_aura_removed_event, update_spell_data_heals
+from ..utils.misc_functions import append_spell_heal_event, append_aura_stacks_decremented, append_aura_removed_event, update_spell_data_heals
 from .spells_passives import JudgmentOfLightSpell, GreaterJudgmentSpell
-
-# target debuffs
 
 
 class JudgmentOfLightDebuff(Debuff):

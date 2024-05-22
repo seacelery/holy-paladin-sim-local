@@ -1,9 +1,8 @@
 import random
 
 from .auras_buffs import SunSear
-from ..utils.beacon_transfer_rates import beacon_transfer_rates_double_beacon
 from ..utils.leech_abilities import leech_abilities
-from ..utils.misc_functions import format_time, append_spell_heal_event, append_spell_beacon_event, calculate_beacon_healing, append_spell_started_casting_event, append_spell_cast_event, append_spell_damage_event, update_spell_data_heals, update_spell_data_casts, update_spell_data_beacon_heals, update_self_buff_data, update_target_buff_data, update_priority_breakdown
+from ..utils.misc_functions import format_time, append_spell_heal_event, append_spell_started_casting_event, append_spell_cast_event, append_spell_damage_event, update_spell_data_heals, update_spell_data_casts, update_target_buff_data, update_priority_breakdown
 from collections import defaultdict
 
 class Spell:

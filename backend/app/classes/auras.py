@@ -1,8 +1,3 @@
-import random
-
-from ..utils.misc_functions import append_spell_heal_event, format_time
-
-
 class Aura:
     
     def __init__(self, name, duration, base_duration=0, current_stacks=1, max_stacks=1, applied_duration=10):

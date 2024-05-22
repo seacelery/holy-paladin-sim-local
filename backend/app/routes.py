@@ -3,7 +3,7 @@ import pprint
 import json
 
 from flask import Blueprint, request, jsonify, session
-from app.main import import_character, run_simulation, initialise_simulation, fetch_updated_data
+from app.main import import_character, run_simulation, initialise_simulation
 from app.socketio_setup import socketio
 from flask_socketio import emit
 from app.classes.simulation_state import cancel_simulation

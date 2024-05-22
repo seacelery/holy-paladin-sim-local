@@ -6,7 +6,6 @@ from ..utils.misc_functions import update_spell_data_heals, add_talent_healing_m
 from ..classes.auras_buffs import HolyBulwarkBuff, SacredWeaponBuff
 
 
-# PASSIVE SPELLS
 class GlimmerOfLightSpell(Spell):
     
     SPELL_POWER_COEFFICIENT = 1.6416 * 0.8

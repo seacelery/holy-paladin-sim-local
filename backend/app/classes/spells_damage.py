@@ -4,12 +4,9 @@ from .spells import Spell
 from ..utils.misc_functions import format_time, increment_holy_power, append_aura_applied_event, append_aura_removed_event, append_aura_stacks_decremented, append_spell_heal_event, update_spell_data_heals, update_self_buff_data, update_mana_gained
 from .auras_debuffs import JudgmentOfLightDebuff, GreaterJudgmentDebuff
 from .auras_buffs import BlessingOfDawn, AvengingWrathAwakening, AvengingCrusaderAwakening, EmpyreanLegacy, Veneration
-from .spells_auras import AvengingWrathBuff
-from .target import Player
 from .summons import ConsecrationSummon, RighteousJudgmentSummon
 
 
-# DAMAGE SPELLS
 class Judgment(Spell):
     
     SPELL_POWER_COEFFICIENT = 1.125 / 1.04

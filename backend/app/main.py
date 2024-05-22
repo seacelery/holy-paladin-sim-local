@@ -1,16 +1,7 @@
-# DO NEXT
-# fix
-
-# awakening cancelaura
-# movement every so often
-# breakdowns in cooldown windows
-
-# options to include
-# heals on beacons, light of dawn targets hit, resplendent, mastery effectiveness, overheal for overflowing and reclamation
-
 import sys
 import os
 import json
+from dotenv import load_dotenv
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -20,11 +11,14 @@ from app.classes.simulation import Simulation
 from app.classes.paladin import Paladin
 from app.classes.target import Target, BeaconOfLight
 from app.utils import cache, battlenet_api
-from app.classes.config import CLIENT_ID, CLIENT_SECRET
 
 pp = pprint.PrettyPrinter(width=200)
 
-access_token = battlenet_api.get_access_token(CLIENT_ID, CLIENT_SECRET)
+load_dotenv()
+
+client_id = os.getenv("CLIENT_ID")
+client_secret = os.getenv("CLIENT_SECRET")
+access_token = battlenet_api.get_access_token(client_id, client_secret)
 
 def save_data_to_file(data, filename):
     with open(filename, "w") as f:
@@ -51,9 +45,3 @@ def fetch_updated_data(paladin):
     
 def run_simulation(simulation):
     return simulation.display_results()
-    
-# if __name__ == "__main__":
-#     paladin, healing_targets = import_character("daisu", "aszune")
-    
-#     simulation = initialise_simulation(paladin, healing_targets, encounter_length=30, iterations=1, time_warp_time=0)
-#     run_simulation(simulation)

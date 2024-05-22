@@ -3,12 +3,8 @@ import json
 import pprint
 
 from app.classes.paladin import Paladin
-from app.classes.target import Target, BeaconOfLight, EnemyTarget
-from app.classes.spells import Spell
-from app.classes.spells_auras import TyrsDeliveranceSpell, TyrsDeliveranceHeal
-from app.classes.spells_healing import HolyShock, HolyLight, FlashOfLight
-from app.classes.spells_damage import Judgment
-from app.classes.auras_buffs import TyrsDeliveranceTargetBuff, DivinePurpose, Innervate
+from app.classes.target import Target, EnemyTarget
+from app.classes.auras_buffs import DivinePurpose, Innervate
 
 pp = pprint.PrettyPrinter(width=200)
 

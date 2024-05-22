@@ -1,8 +1,6 @@
 import os
 import json
 import pprint
-import random
-import math
 
 from app.classes.paladin import Paladin
 from app.classes.target import Target

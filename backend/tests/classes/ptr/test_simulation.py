@@ -1,17 +1,9 @@
 import os
 import json
 import pprint
-import random
-import math
 
-from app.classes.simulation import Simulation
 from app.classes.paladin import Paladin
-from app.classes.target import Target, BeaconOfLight, EnemyTarget
-from app.classes.spells_auras import TyrsDeliveranceHeal
-from app.classes.auras_buffs import DivinePurpose, BlessingOfDawn, GlimmerOfLightBuff
-from app.classes.spells_healing import DivineResonanceHolyShock, RisingSunlightHolyShock, DivineTollHolyShock
-from app.main import initialise_simulation, run_simulation
-from app.utils.beacon_transfer_rates import beacon_transfer_rates_single_beacon, beacon_transfer_rates_double_beacon
+from app.classes.target import Target
 
 pp = pprint.PrettyPrinter(width=200)
 

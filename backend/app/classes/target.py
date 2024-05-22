@@ -1,6 +1,6 @@
 import re
 
-from ..utils.misc_functions import format_time, update_target_buff_data, update_spell_data_heals
+from ..utils.misc_functions import update_target_buff_data, update_spell_data_heals
 
 class Target:
     
