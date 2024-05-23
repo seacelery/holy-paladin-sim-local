@@ -47,19 +47,19 @@
 <p align="right"><a href="#readme-top">back to top</a></p>
 
 ## Usage
-<div style="display: grid; grid-template-columns: 1fr; gap: 20px;">
+<br>
 
-  <div>
-    <div style="margin-bottom: 15px; font-weight: bold">1. Options</div>
-    <br>
+### Options
+
+<br>
     <div>
-      <img src="https://i.imgur.com/ITrtlF5.png" alt="Image 1" style="width: 600px; height: auto; margin-bottom: 10px; border: 1px solid #3c3241">
+        <img src="https://i.imgur.com/ITrtlF5.png" alt="Image 1" style="width: 600px; height: auto; margin-bottom: 10px; border: 1px solid #3c3241">
     </div>
     <div style="margin-bottom: 5px;">
         For accuracy, always simulate with at least 100 iterations. Single iteration sims can be helpful if you just want to confirm the simulation is doing what you expect it to based on the priority list via the timeline tab.
     </div>
-  </div>
-    <br>
+<br>
+    </div>
   <div>
     <div style="margin-bottom: 15px; font-weight: bold">2. Talents</div style="margin-bottom: 15px;">
     <br>
@@ -118,8 +118,6 @@
     <div style="margin-bottom: 15px; font-weight: bold">6. Optionally give your simulation a name, then press Simulate and take a look at the results!</div style="margin-bottom: 15px;">
     <br>
   </div>
-
-</div>
 
 
 ## Installation
