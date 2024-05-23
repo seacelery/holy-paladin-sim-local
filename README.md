@@ -51,6 +51,7 @@
 
   <div>
     <div style="margin-bottom: 15px; font-weight: bold">1. Options</div>
+    <br>
     <div>
       <img src="https://i.imgur.com/ITrtlF5.png" alt="Image 1" style="width: 600px; height: auto; margin-bottom: 10px; border: 1px solid #3c3241">
     </div>
@@ -58,9 +59,10 @@
         For accuracy, always simulate with at least 100 iterations. Single iteration sims can be helpful if you just want to confirm the simulation is doing what you expect it to based on the priority list via the timeline tab.
     </div>
   </div>
-
+    <br>
   <div>
     <div style="margin-bottom: 15px; font-weight: bold">2. Talents</div style="margin-bottom: 15px;">
+    <br>
     <div>
       <img src="https://i.imgur.com/vLu8yEu.png" alt="Image 2" style="width: 600px; height: auto; margin-bottom: 10px; border: 1px solid #3c3241">
     </div>
@@ -68,9 +70,10 @@
         Left click an icon to add a talent point, right click to remove them.
     </div>
   </div>
-
+    <br>
   <div>
     <div style="margin-bottom: 15px; font-weight: bold">3. Equipment</div style="margin-bottom: 15px;">
+    <br>
     <div>
       <img src="https://i.imgur.com/SDG6kJw.png" alt="Image 3" style="width: 600px; height: auto; margin-bottom: 10px; border: 1px solid #3c3241">
     </div>
@@ -78,9 +81,10 @@
         For accuracy, always simulate with at least 100 iterations. Single iteration sims can be helpful if you just want to confirm the simulation is doing what you expect it to based on the priority list via the timeline tab.
     </div>
   </div>
-
+    <br>
   <div>
     <div style="margin-bottom: 15px; font-weight: bold">4. Buffs & Consumables</div style="margin-bottom: 15px;">
+    <br>
     <div>
       <img src="https://i.imgur.com/Hfev4ZQ.png" alt="Image 4" style="width: 600px; height: auto; margin-bottom: 10px; border: 1px solid #3c3241">
     </div>
@@ -88,9 +92,10 @@
         Some buffs like Innervate and Power Infusion have timer options where you can set each specific timer or press the repeat button to use it on cooldown after the first specified time.
     </div>
   </div>
-
+    <br>
   <div>
     <div style="margin-bottom: 15px; font-weight: bold">5. Priority List</div style="margin-bottom: 15px;">
+    <br>
     <div>
       <img src="https://i.imgur.com/ItpkVJc.png" alt="Image 5" style="width: 600px; height: auto; margin-bottom: 10px; border: 1px solid #3c3241">
     </div>
@@ -111,6 +116,7 @@
   
   <div>
     <div style="margin-bottom: 15px; font-weight: bold">6. Optionally give your simulation a name, then press Simulate and take a look at the results!</div style="margin-bottom: 15px;">
+    <br>
   </div>
 
 </div>
