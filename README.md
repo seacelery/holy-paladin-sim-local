@@ -50,14 +50,12 @@
 <br>
 
 ### Options
-
-<br>
-    <div>
-        <img src="https://i.imgur.com/ITrtlF5.png" alt="Image 1" style="width: 600px; height: auto; margin-bottom: 10px; border: 1px solid #3c3241">
-    </div>
-    <div style="margin-bottom: 5px;">
-        For accuracy, always simulate with at least 100 iterations. Single iteration sims can be helpful if you just want to confirm the simulation is doing what you expect it to based on the priority list via the timeline tab.
-    </div>
+<div>
+    <img src="https://i.imgur.com/ITrtlF5.png" alt="Image 1" style="width: 600px; height: auto; margin-bottom: 10px; border: 1px solid #3c3241">
+</div>
+<div style="margin-bottom: 5px;">
+    For accuracy, always simulate with at least 100 iterations. Single iteration sims can be helpful if you just want to confirm the simulation is doing what you expect it to based on the priority list via the timeline tab.
+</div>
 <br>
     </div>
   <div>
