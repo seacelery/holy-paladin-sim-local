@@ -49,7 +49,7 @@
 ## Usage
 
 ### Import your character
-<img src="https://i.imgur.com/aw3LrZm.png" alt="Import image">
+<img src="https://i.imgur.com/hHx1p2w.png" alt="Import image">
 
 ### Options
 <div>
