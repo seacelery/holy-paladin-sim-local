@@ -55,7 +55,6 @@
 <div style="margin-bottom: 5px;">
     For accuracy, always simulate with at least 100 iterations. Single iteration sims can be helpful if you just want to confirm the simulation is doing what you expect it to based on the priority list via the timeline tab.
 </div>
-<br>
 
 ### Talents
 <div>
