@@ -143,9 +143,16 @@ Finally, go to http://127.0.0.1:5500/frontend/public/ to use the app.
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 
+## Features to come
+
+* Changing stats on crafted equipment
+* Overhealing for each spell based on a log or user input
+
+<p align="right"><a href="#readme-top">back to top</a></p>
+
 ## License
 
-Distributed under the MIT License. See LICENSE.txt for more information.
+Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 
