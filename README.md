@@ -149,5 +149,5 @@ Distributed under the MIT License. See LICENSE.txt for more information.
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 
-[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
-[license-url]: https://github.com/seacelery/repo_name/blob/master/LICENSE.txt
+[license-shield]: https://img.shields.io/github/license/seacelery/holy-paladin-sim-local.svg?style=for-the-badge
+[license-url]: https://github.com/seacelery/holy-paladin-sim-local/blob/master/LICENSE.txt
