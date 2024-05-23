@@ -31,6 +31,12 @@
 
 ## About
 
+This project started out as a tool I made for a friend who plays professionally, but the scope really grew as it became clearer just how much is left to how something feels rather than the actual numbers behind it and so I figured it was time we got some real answers. I really tried to put all of the control in the user's hands here to make it as simple or as complicated as desired, for example it can be used to quickly work out if one piece of equipment is better than another, or you can delve into the super fine details of the priority list that would otherwise be complete guesswork. 
+
+For the technologies, I kept it simple with a Python backend and plain Javascript & CSS frontend because I really wanted to get the fundamentals down before properly learning React. I deployed it with the help of Docker, Celery workers for the simulation itself, and Redis.
+
+Importantly, I will be keeping this maintained for the next expansion, The World Within, with many of the changes already implemented!
+
 <img src="frontend/public/readme-images/simulation_page.png" alt="Image 5" style="width: 100%; height: auto; margin-bottom: 10px; border: 1px solid #3c3241">
 
 <p align="right"><a href="#readme-top">back to top</a></p>
@@ -147,6 +153,7 @@ Finally, go to http://127.0.0.1:5500/frontend/public/ to use the app.
 
 * Changing stats on crafted equipment
 * Overhealing for each spell based on a log or user input
+* Import characters from CN/KR/TW servers
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 
