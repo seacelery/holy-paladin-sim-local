@@ -31,7 +31,7 @@
 
 ## About
 
-<img src="https://i.imgur.com/6IcXgsQ.png" alt="Image 5" style="width: 100%; height: auto; margin-bottom: 10px; border: 1px solid #3c3241">
+<img src="https://i.imgur.com/lQN95SC.png" alt="Image 5" style="width: 100%; height: auto; margin-bottom: 10px; border: 1px solid #3c3241">
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 
@@ -48,11 +48,12 @@
 
 ## Usage
 
+### Import your character
+<img src="https://i.imgur.com/aw3LrZm.png" alt="Import image">
+
 ### Options
 <div>
-    <kbd>
-        <img src="https://i.imgur.com/ITrtlF5.png" alt="Image 1" style="width: 600px; height: auto; margin-bottom: 10px; border: 1px solid #3c3241">
-    </kbd>
+    <img src="https://i.imgur.com/0XD8ZOW.png" alt="Options image">
 </div>
 <div style="margin-bottom: 5px;">
     For accuracy, always simulate with at least 100 iterations. Single iteration sims can be helpful if you just want to confirm the simulation is doing what you expect it to based on the priority list via the timeline tab.
@@ -60,7 +61,7 @@
 
 ### Talents
 <div>
-    <img src="https://i.imgur.com/vLu8yEu.png" alt="Image 2" style="width: 600px; height: auto; margin-bottom: 10px; border: 1px solid #3c3241">
+    <img src="https://i.imgur.com/xKW6J0x.png" alt="Talents image">
 </div>
 <div style="margin-bottom: 5px;">
     Left click an icon to add a talent point, right click to remove them.
@@ -68,15 +69,15 @@
 
 ### Equipment
 <div>
-    <img src="https://i.imgur.com/SDG6kJw.png" alt="Image 3" style="width: 600px; height: auto; margin-bottom: 10px; border: 1px solid #3c3241">
+    <img src="https://i.imgur.com/xEdiDnT.png" alt="Equipment image">
 </div>
 <div style="margin-bottom: 5px;">
     For accuracy, always simulate with at least 100 iterations. Single iteration sims can be helpful if you just want to confirm the simulation is doing what you expect it to based on the priority list via the timeline tab.
 </div>
 
-### Buffs and Consumables
+### Buffs & Consumables
 <div>
-    <img src="https://i.imgur.com/Hfev4ZQ.png" alt="Image 4" style="width: 600px; height: auto; margin-bottom: 10px; border: 1px solid #3c3241">
+    <img src="https://i.imgur.com/Hfev4ZQ.png" alt="Buffs and Consumables image">
 </div>
 <div style="margin-bottom: 5px;">
     Some buffs like Innervate and Power Infusion have timer options where you can set each specific timer or press the repeat button to use it on cooldown after the first specified time.
@@ -84,7 +85,7 @@
 
 ### Priority List
 <div>
-    <img src="https://i.imgur.com/ItpkVJc.png" alt="Image 5" style="width: 600px; height: auto; margin-bottom: 10px; border: 1px solid #3c3241">
+    <img src="https://i.imgur.com/8veENu9.png" alt="Priority List image">
 </div>
 <div style="margin-bottom: 5px;">
     There are some helpful buttons in the top right to aid you in creating priority lists:
