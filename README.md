@@ -47,7 +47,6 @@
 <p align="right"><a href="#readme-top">back to top</a></p>
 
 ## Usage
-<br>
 
 ### Options
 <div>
@@ -57,16 +56,14 @@
     For accuracy, always simulate with at least 100 iterations. Single iteration sims can be helpful if you just want to confirm the simulation is doing what you expect it to based on the priority list via the timeline tab.
 </div>
 <br>
-    </div>
-  <div>
-    <div style="margin-bottom: 15px; font-weight: bold">2. Talents</div style="margin-bottom: 15px;">
-    <br>
-    <div>
-      <img src="https://i.imgur.com/vLu8yEu.png" alt="Image 2" style="width: 600px; height: auto; margin-bottom: 10px; border: 1px solid #3c3241">
-    </div>
-    <div style="margin-bottom: 5px;">
-        Left click an icon to add a talent point, right click to remove them.
-    </div>
+
+### Talents
+<div>
+    <img src="https://i.imgur.com/vLu8yEu.png" alt="Image 2" style="width: 600px; height: auto; margin-bottom: 10px; border: 1px solid #3c3241">
+</div>
+<div style="margin-bottom: 5px;">
+    Left click an icon to add a talent point, right click to remove them.
+</div>
   </div>
     <br>
   <div>
