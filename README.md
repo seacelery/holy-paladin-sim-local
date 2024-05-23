@@ -31,7 +31,7 @@
 
 ## About
 
-<img src="https://i.imgur.com/lQN95SC.png" alt="Image 5" style="width: 100%; height: auto; margin-bottom: 10px; border: 1px solid #3c3241">
+<img src="frontend/public/readme-images/simulation_page.png" alt="Image 5" style="width: 100%; height: auto; margin-bottom: 10px; border: 1px solid #3c3241">
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 
@@ -49,11 +49,11 @@
 ## Usage
 
 ### Import your character
-<img src="https://i.imgur.com/hHx1p2w.png" alt="Import image">
+<img src="frontend/public/readme-images/import_page.png" alt="Import image">
 
 ### Options
 <div>
-    <img src="https://i.imgur.com/0XD8ZOW.png" alt="Options image">
+    <img src="frontend/public/readme-images/options_page.png" alt="Options image">
 </div>
 <div style="margin-bottom: 5px;">
     For accuracy, always simulate with at least 100 iterations. Single iteration sims can be helpful if you just want to confirm the simulation is doing what you expect it to based on the priority list via the timeline tab.
@@ -61,7 +61,7 @@
 
 ### Talents
 <div>
-    <img src="https://i.imgur.com/xKW6J0x.png" alt="Talents image">
+    <img src="frontend/public/readme-images/talents_page.png" alt="Talents image">
 </div>
 <div style="margin-bottom: 5px;">
     Left click an icon to add a talent point, right click to remove them.
@@ -69,7 +69,7 @@
 
 ### Equipment
 <div>
-    <img src="https://i.imgur.com/xEdiDnT.png" alt="Equipment image">
+    <img src="frontend/public/readme-images/equipment_page.png" alt="Equipment image">
 </div>
 <div style="margin-bottom: 5px;">
     Clicking on the item level in either the currently equipped or replace item boxes will allow you to change it, updating the stats to the proper values. You can add leech by clicking on an empty stat field and typing any amount you want.
@@ -85,7 +85,7 @@
 
 ### Priority List
 <div>
-    <img src="https://i.imgur.com/ebxUztR.png" alt="Priority List image">
+    <img src="frontend/public/readme-images/priolist_page.png" alt="Priority List image">
 </div>
 <div style="margin-bottom: 5px;">
     There are some helpful buttons in the top right to aid you in creating priority lists:
@@ -148,3 +148,6 @@ Finally, go to http://127.0.0.1:5500/frontend/public/ to use the app.
 Distributed under the MIT License. See LICENSE.txt for more information.
 
 <p align="right"><a href="#readme-top">back to top</a></p>
+
+[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
+[license-url]: https://github.com/seacelery/repo_name/blob/master/LICENSE.txt
