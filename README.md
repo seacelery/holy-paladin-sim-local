@@ -77,7 +77,7 @@
 
 ### Buffs & Consumables
 <div>
-    <img src="https://i.imgur.com/Hfev4ZQ.png" alt="Buffs and Consumables image">
+    <img src="https://i.imgur.com/8veENu9.png" alt="Buffs and Consumables image">
 </div>
 <div style="margin-bottom: 5px;">
     Some buffs like Innervate and Power Infusion have timer options where you can set each specific timer or press the repeat button to use it on cooldown after the first specified time.
@@ -85,7 +85,7 @@
 
 ### Priority List
 <div>
-    <img src="https://i.imgur.com/8veENu9.png" alt="Priority List image">
+    <img src="https://i.imgur.com/ebxUztR.png" alt="Priority List image">
 </div>
 <div style="margin-bottom: 5px;">
     There are some helpful buttons in the top right to aid you in creating priority lists:
