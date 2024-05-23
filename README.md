@@ -5,7 +5,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="frontend/public/readme-images/paladin-pink-favicon.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Holy Paladin Sim</h3>
@@ -72,12 +72,12 @@
     <img src="https://i.imgur.com/xEdiDnT.png" alt="Equipment image">
 </div>
 <div style="margin-bottom: 5px;">
-    For accuracy, always simulate with at least 100 iterations. Single iteration sims can be helpful if you just want to confirm the simulation is doing what you expect it to based on the priority list via the timeline tab.
+    Clicking on the item level in either the currently equipped or replace item boxes will allow you to change it, updating the stats to the proper values. You can add leech by clicking on an empty stat field and typing any amount you want.
 </div>
 
 ### Buffs & Consumables
 <div>
-    <img src="https://i.imgur.com/8veENu9.png" alt="Buffs and Consumables image">
+    <img src="frontend/public/readme-images/buffs_page.png" alt="Buffs and Consumables image">
 </div>
 <div style="margin-bottom: 5px;">
     Some buffs like Innervate and Power Infusion have timer options where you can set each specific timer or press the repeat button to use it on cooldown after the first specified time.
