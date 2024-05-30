@@ -1,5 +1,3 @@
-dawnlight & morning star
-wog ef lod morning star
-prio breakdown hide 0 stack buffs
-morning star icon
-morning star init paladin
+ac duration, cs charges, ac holy power
+cm judge
+holy light cast time

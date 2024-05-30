@@ -11,6 +11,11 @@ Blessing of Summer redesigned
 Sacrifice of the Just reduced to 15 seconds cooldown reduction
 Light's Hammer removed
 Light of the Martyr redesigned
+Avenging Crusader holy power cost removed, gives crusader strike 2 charges while active, and lasts 15 seconds instead of 12
+Crusader's Might affects Judgment
+Holy Light cast time 2.5 -> 2
+Infusion of Light increases Holy Light healing by 90% instead of granting holy power
+Inflorescence of the Sunwell increases Infusion of Light's Holy Light healing bonus by 50%
 
 Talent tree changes:
 Hero talents added
