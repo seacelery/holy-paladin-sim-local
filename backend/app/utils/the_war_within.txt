@@ -3,6 +3,7 @@ Beacon of Light transfer -10%
 Holy Shock healing +20%
 Word of Glory healing +25%
 Light of Dawn healing +20%
+Word of Glory/Light of Dawn/Eternal Flame mana cost down from 1.2% to 0.8%
 Barrier of Faith transfer -5%
 Tyr's Deliverance healing -15%
 Tyr's Deliverance bugfix, now works with Avenging Wrath healing
@@ -11,7 +12,7 @@ Blessing of Summer redesigned
 Sacrifice of the Just reduced to 15 seconds cooldown reduction
 Light's Hammer removed
 Light of the Martyr redesigned
-Avenging Crusader holy power cost removed, gives crusader strike 2 charges while active, and lasts 15 seconds instead of 12
+Avenging Crusader holy power cost removed, gives crusader strike 2 charges while active, lasts 15 seconds instead of 12, and healing up to 420% from 360%
 Crusader's Might affects Judgment
 Holy Light cast time 2.5 -> 2
 Infusion of Light increases Holy Light healing by 90% instead of granting holy power
