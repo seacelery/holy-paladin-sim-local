@@ -1219,6 +1219,14 @@ raceImages.forEach(image => {
     addTooltipFunctionality(image, raceTooltip, image.getAttribute("data-race"));
 });
 
+const lightforgedDraeneiImage = document.getElementById("lightforged-draenei-image");
+const earthenDwarfImage = document.getElementById("earthen-dwarf-image");
+const version = document.documentElement.getAttribute("data-version");
+if (version === "The War Within") {
+    lightforgedDraeneiImage.style.display = "none";
+    earthenDwarfImage.style.display = "block";
+};
+
 const flaskImages = document.querySelectorAll(".flask-image");
 handleOptionImages(flaskImages, "flask", "consumable", true);
 
