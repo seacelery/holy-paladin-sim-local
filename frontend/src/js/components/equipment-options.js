@@ -300,19 +300,23 @@ const initialiseEquipment = () => {
 
         const itemSlotData = JSON.parse(itemSlot.getAttribute("data-item-data"));
 
-        const updateItemData = (property, new_value, subProperty = null) => {
-            if (property === "effects" && new_value.length === 0) {
+        const updateItemData = (property, newValue, subProperty = null) => {
+            if (property === "effects" && newValue.length === 0) {
                 itemSlotData["limit"] = "";
             };
 
-            if (new_value[0]?.type === "embellishment") {
+            if (newValue[0]?.type === "embellishment") {
                 itemSlotData["limit"] = "Unique-Equipped: Embellished (2)";
             };
 
             if (subProperty) {
-                itemSlotData[property][subProperty] = new_value;
+                if (newValue === 0) {
+                    delete itemSlotData[property][subProperty];
+                } else {
+                    itemSlotData[property][subProperty] = newValue;
+                };
             } else {
-                itemSlotData[property] = new_value;
+                itemSlotData[property] = newValue;
             };
 
             itemSlot.setAttribute("data-item-data", JSON.stringify(itemSlotData))
@@ -384,12 +388,47 @@ const initialiseEquipment = () => {
             };
 
             currentItemDetails.forEach((item, index) => {
-                const field = createElement("div", "current-equipped-item-field-left",null);
+                const field = createElement("div", "current-equipped-item-field-left", null);
                 field.id = `current-equipped-item-field-left-${index};`
                 field.textContent = item.text;
                 field.style.color = item.colour;
                 currentItemLeftContainer.appendChild(field);
 
+                // edit secondary stats
+                if (["current-equipped-item-stat-1", "current-equipped-item-stat-2"].includes(item.id) && itemSlotData.name in craftedItems) {
+                    const stat = item.text.split(" ")[1].toLowerCase();
+
+                    field.contentEditable = true;
+                    field.addEventListener("input", (e) => {
+                        if (e.target.innerText === "") {
+                            e.target.innerHTML = "&#8203";
+                        };
+                    });
+
+                    field.addEventListener("blur", () => {
+                        const valueMatch = field.textContent.match(/\d+/);
+                        let newStatValue = valueMatch ? parseInt(valueMatch[0]) : 0;
+
+                        const statMatch = field.textContent.match(/[a-zA-Z]+/);
+                        let statName = statMatch ? statMatch[0].toLowerCase() : null;
+                        if (statName !== stat) {
+                            updateItemData("stats", 0, stat);
+                            updateItemData("stats", newStatValue, statName);
+                        } else {
+                            updateItemData("stats", newStatValue, stat);
+                        };
+                        
+                        updateEquippedItemDisplay(itemSlot, itemSlots);
+                    });
+
+                    field.addEventListener("keydown", (e) => {
+                        if (e.key !== "Enter") return;
+
+                        field.blur();                             
+                    });
+                };
+
+                // edit leech
                 if (itemSlotData.stats["leech"] && item.id === "current-equipped-item-leech") {
                     field.contentEditable = true;
                     field.addEventListener("input", (e) => {
@@ -1041,6 +1080,45 @@ const initialiseEquipment = () => {
                     field.textContent = itemStat.text;
                     field.style.color = itemStat.colour;
                     newItemLeftContainer.appendChild(field);
+
+                    if (["new-equipped-item-stat-1", "new-equipped-item-stat-2"].includes(itemStat.id) && item.name in craftedItems) {
+                        let stat = itemStat.text.split(" ")[1];
+                        if (stat === "Crit") stat = "Critical Strike";
+
+                        field.contentEditable = true;
+                        field.addEventListener("input", (e) => {
+                            if (e.target.innerText === "") {
+                                e.target.innerHTML = "&#8203";
+                            };
+                        });
+
+                        field.addEventListener("blur", () => {
+                            const valueMatch = field.textContent.match(/\d+/);
+                            let newStatValue = valueMatch ? parseInt(valueMatch[0]) : 0;
+
+                            const statMatch = field.textContent.match(/[a-zA-Z]+/);
+                            let statName = statMatch ? statMatch[0].toLowerCase() : null;
+
+                            if (statName !== stat) {
+                                delete item.stats[stat];
+                                item.stats[statName] = newStatValue;
+                                if (statName === "Critical Strike") statName = "Crit";
+                                field.textContent = `+${item.stats[statName]} ${statName.charAt(0).toUpperCase()}${statName.slice(1)}`;
+                                field.style.color = `var(--stat-${statName})`;
+                            } else {
+                                item.stats[stat] = newStatValue;
+                                if (stat === "Critical Strike") stat = "crit";
+                                field.textContent = `+${item.stats[stat]} ${stat.charAt(0).toUpperCase()}${stat.slice(1)}`;
+                                field.style.color = `var(--stat-${stat})`;
+                            };
+                        });
+
+                        field.addEventListener("keydown", (e) => {
+                            if (e.key !== "Enter") return;
+
+                            field.blur();                             
+                        });
+                    };
 
                     if (itemStat.id == 0) {
                         field.contentEditable = true;
