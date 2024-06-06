@@ -14,7 +14,7 @@ pp = pprint.PrettyPrinter(width=200)
 
 class Simulation:
     
-    def __init__(self, paladin, healing_targets_list, encounter_length, iterations, time_warp_time, priority_list, custom_equipment, tick_rate, raid_health, mastery_effectiveness, light_of_dawn_targets, lights_hammer_targets, resplendent_light_targets, seasons, stat_scaling, access_token, test=False):
+    def __init__(self, paladin, healing_targets_list, encounter_length, iterations, time_warp_time, priority_list, custom_equipment, tick_rate, raid_health, mastery_effectiveness, light_of_dawn_targets, lights_hammer_targets, resplendent_light_targets, seasons, stat_scaling, overhealing, access_token, test=False):
 
         self.access_token = access_token
 
@@ -36,6 +36,8 @@ class Simulation:
             self.priority_list.append((action_name, condition_lambda))
             
         self.stat_scaling = stat_scaling
+        self.overhealing = overhealing
+        print(self.overhealing)
         
         # make tick rate smaller for better hot accuracy
         self.tick_rate = float(tick_rate)
@@ -699,6 +701,32 @@ class Simulation:
             "Sacred Weapon 2": "Sacred Weapon"
         }
         
+        # INCLUDE OVERHEALING
+        def include_overhealing(ability_breakdown):        
+            if not self.overhealing:
+                return
+            
+            for spell in ability_breakdown:
+                if ability_breakdown[spell]["sub_spells"]:
+                    for sub_spell in ability_breakdown[spell]["sub_spells"]:
+                        if ability_breakdown[spell]["sub_spells"][sub_spell]["sub_spells"]:
+                            for nested_sub_spell in ability_breakdown[spell]["sub_spells"][sub_spell]["sub_spells"]:
+                                if nested_sub_spell in self.overhealing:
+                                    ability_breakdown[spell]["sub_spells"][sub_spell]["sub_spells"][nested_sub_spell]["total_healing"] *= 1 - self.overhealing[nested_sub_spell]  
+                        elif sub_spell in self.overhealing:
+                            ability_breakdown[spell]["sub_spells"][sub_spell]["total_healing"] *= 1 - self.overhealing[sub_spell]
+                elif spell in self.overhealing:
+                    ability_breakdown[spell]["total_healing"] *= 1 - self.overhealing[spell]
+                        
+            for sub_spell in self.overhealing:
+                if sub_spell not in ability_breakdown:
+                    for main_spell in ability_breakdown:
+                        if sub_spell in ability_breakdown[main_spell]["sub_spells"]:
+                            ability_breakdown[main_spell]["sub_spells"][sub_spell]["total_healing"] *= 1 - self.overhealing[sub_spell]
+                        for nested_sub_spell in ability_breakdown[main_spell]["sub_spells"]:
+                            if sub_spell in ability_breakdown[main_spell]["sub_spells"][nested_sub_spell]["sub_spells"]:
+                                ability_breakdown[main_spell]["sub_spells"][nested_sub_spell]["sub_spells"][sub_spell]["total_healing"] *= 1 - self.overhealing[sub_spell]
+        
         # PROCESS ABILITY HEALING
         def add_sub_spell_healing(primary_spell_data):
             total_healing = primary_spell_data.get("total_healing", 0)
@@ -721,7 +749,7 @@ class Simulation:
 
             for spell, data in beacon_sources.items():
                 if spell.startswith(prefix):
-                    combined_source["healing"] += data["healing"]
+                    combined_source["healing"] += data["healing"] * self.overhealing["Beacon of Light"]
                     combined_source["hits"] += data["hits"]
                     keys_to_delete.append(spell)
 
@@ -1151,6 +1179,7 @@ class Simulation:
                 self.update_final_cooldowns_breakdown_times()
                 
                 ability_breakdown = self.paladin.ability_breakdown
+                include_overhealing(ability_breakdown)
                 self_buff_breakdown = self.paladin.self_buff_breakdown
                 target_buff_breakdown = self.paladin.target_buff_breakdown
                 glimmer_counts = self.paladin.glimmer_counts

@@ -13,7 +13,7 @@ import { createPriorityListDisplay, priorityList, addPotionToPriorityList, updat
 import { createLoadoutBreakdown } from "./loadout-breakdown.js";
 import { createDistributionBreakdown } from "./distribution-breakdown.js";
 import { handleTabs } from "./simulation-options-tabs.js";
-import { setSimulationOptionsFromImportedData, generateBuffsConsumablesImages } from "./simulation-options.js";
+import { handleOverhealingAbilitiesModal, getOverhealingPercentages, setSimulationOptionsFromImportedData, generateBuffsConsumablesImages } from "./simulation-options.js";
 import { createTalentGrid, updateTalentsFromImportedData } from "./talent-grid.js";
 import { updateEquipmentFromImportedData, initialiseEquipment, generateFullItemData } from "./equipment-options.js";
 import { formatNumbers, formatNumbersNoRounding, formatTime, formatThousands, makeFieldEditable, updateEquipmentWithEffectValues, createTooltip, addTooltipFunctionality } from "../utils/misc-functions.js";
@@ -481,17 +481,20 @@ const runSimulation = async () => {
     });
     statScaling = encodeURIComponent(JSON.stringify(statScaling));
 
+    const overhealingPercentages = getOverhealingPercentages();
+
     simulationProgressBarContainer.style.opacity = "100";
     isSimulationRunning = true;
 
     simulationProgressBarContainer.addEventListener("click", handleSimulationCancel);
 
     const priorityListJson = encodeURIComponent(JSON.stringify(priorityList));
-    const customEquipment = encodeURIComponent(JSON.stringify(generateFullItemData()["equipment"]));
+    const overhealingJson = encodeURIComponent(JSON.stringify(overhealingPercentages));
+    const customEquipment = encodeURIComponent(JSON.stringify(generateFullItemData()["equipment"]));    
 
     simulateButton.style.boxShadow = "";  
 
-    return fetch(`http://127.0.0.1:5000/run_simulation?encounter_length=${encounterLength}&iterations=${iterations}&time_warp_time=${timeWarpTime}&priority_list=${priorityListJson}&custom_equipment=${customEquipment}&tick_rate=${tickRate}&raid_health=${raidHealth}&mastery_effectiveness=${masteryEffectiveness}&light_of_dawn_targets=${lightOfDawnTargets}&lights_hammer_targets=${lightsHammerTargets}&resplendent_light_targets=${resplendentLightTargets}&stat_scaling=${statScaling}&seasons=${seasons}`, {
+    return fetch(`http://127.0.0.1:5000/run_simulation?encounter_length=${encounterLength}&iterations=${iterations}&time_warp_time=${timeWarpTime}&priority_list=${priorityListJson}&custom_equipment=${customEquipment}&tick_rate=${tickRate}&raid_health=${raidHealth}&mastery_effectiveness=${masteryEffectiveness}&light_of_dawn_targets=${lightOfDawnTargets}&lights_hammer_targets=${lightsHammerTargets}&resplendent_light_targets=${resplendentLightTargets}&stat_scaling=${statScaling}&seasons=${seasons}&overhealing=${overhealingJson}`, {
         credentials: "include",
         signal: signal
     })
@@ -1109,6 +1112,8 @@ importButton.addEventListener("click", async () => {
         consumables: currentConsumables
     });
 });
+
+handleOverhealingAbilitiesModal();
 
 const presetBuffsButton = document.getElementById("preset-buffs-button");
 presetBuffsButton.addEventListener("click", () => {

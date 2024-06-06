@@ -164,6 +164,7 @@ def run_simulation_route():
     resplendent_light_targets = request.args.get("resplendent_light_targets")
     stat_scaling_json = request.args.get("stat_scaling")
     seasons_json = request.args.get("seasons")
+    overhealing_json = request.args.get("overhealing")
     
     if priority_list_json:
         priority_list = json.loads(priority_list_json)
@@ -173,6 +174,9 @@ def run_simulation_route():
         
     if seasons_json:
         seasons = json.loads(seasons_json)
+        
+    if overhealing_json:
+        overhealing = json.loads(overhealing_json)
 
     paladin, healing_targets = import_character(character_name, realm, region, version)
     
@@ -188,7 +192,7 @@ def run_simulation_route():
         consumables=modifiable_data.get("consumables")
     )
         
-    simulation = initialise_simulation(paladin, healing_targets, encounter_length, iterations, time_warp_time, priority_list, custom_equipment, tick_rate, raid_health, mastery_effectiveness, light_of_dawn_targets, lights_hammer_targets, resplendent_light_targets, seasons, stat_scaling)
+    simulation = initialise_simulation(paladin, healing_targets, encounter_length, iterations, time_warp_time, priority_list, custom_equipment, tick_rate, raid_health, mastery_effectiveness, light_of_dawn_targets, lights_hammer_targets, resplendent_light_targets, seasons, stat_scaling, overhealing)
 
     # pp.pprint(paladin.class_talents)
     results = run_simulation(simulation)
