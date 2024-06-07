@@ -749,7 +749,7 @@ class Simulation:
 
             for spell, data in beacon_sources.items():
                 if spell.startswith(prefix):
-                    combined_source["healing"] += data["healing"] * self.overhealing["Beacon of Light"]
+                    combined_source["healing"] += data["healing"] * self.overhealing.get("Beacon of Light", 1)
                     combined_source["hits"] += data["hits"]
                     keys_to_delete.append(spell)
 
