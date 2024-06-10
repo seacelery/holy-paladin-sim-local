@@ -993,6 +993,9 @@ class HolyLight(Spell):
         if caster.ptr:
             self.MANA_COST = 0.048
             self.mana_cost = 0.048
+            
+        if caster.ptr:
+            self.SPELL_POWER_COEFFICIENT = 5.096
     
     def cast_healing_spell(self, caster, targets, current_time, is_heal):
         # tyr's deliverance
@@ -1178,6 +1181,9 @@ class FlashOfLight(Spell):
         # tower of radiance
         if caster.is_talent_active("Tower of Radiance"):
             self.holy_power_gain = 1
+            
+        if caster.ptr:
+            self.SPELL_POWER_COEFFICIENT = 2.63 * 0.96
         
     def cast_healing_spell(self, caster, targets, current_time, is_heal):
         # tyr's deliverance
@@ -1324,7 +1330,7 @@ class WordOfGlory(Spell):
     def __init__(self, caster):
         super().__init__("Word of Glory", mana_cost=WordOfGlory.MANA_COST, holy_power_cost=WordOfGlory.HOLY_POWER_COST, max_charges=0, is_heal=True)
         if caster.ptr:
-            self.SPELL_POWER_COEFFICIENT = 3.15 * 1.11
+            self.SPELL_POWER_COEFFICIENT = 3.15 * 1.02 * 1.15
             self.MANA_COST = 0.008
             self.mana_cost = 0.008
         
@@ -1843,7 +1849,7 @@ class EternalFlame(Spell):
             
 class LightOfDawn(Spell):
     
-    SPELL_POWER_COEFFICIENT = 0.8334 * 0.8 * 1.2
+    SPELL_POWER_COEFFICIENT = 0.8
     MANA_COST = 0.012
     HOLY_POWER_COST = 3
     BASE_COOLDOWN = 0
@@ -2089,9 +2095,12 @@ class HolyPrism(Spell):
         if caster.set_bonuses["season_2"] >= 4:
             self.spell_healing_modifier *= 1.4
             self.holy_power_gain = 1
+            
+        if caster.ptr:
+            self.SPELL_POWER_COEFFICIENT = 2.0384
         
     def cast_healing_spell(self, caster, targets, current_time, is_heal):
-        cast_success = super().cast_healing_spell(caster, targets, current_time, is_heal)
+        cast_success, spell_crit, heal_amount = super().cast_healing_spell(caster, targets, current_time, is_heal)
         if cast_success:
             increment_holy_power(self, caster, current_time)
             update_spell_holy_power_gain(caster.ability_breakdown, self.name, self.holy_power_gain)
@@ -2101,6 +2110,8 @@ class HolyPrism(Spell):
                 
             if caster.ptr and caster.is_talent_active("Aurora"):
                 caster.apply_buff_to_self(DivinePurpose(), current_time, reapply=True)
+                
+            return cast_success, spell_crit, heal_amount
 
 
 class LightsHammerSpell(Spell):
