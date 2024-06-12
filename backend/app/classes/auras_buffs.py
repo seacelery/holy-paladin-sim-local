@@ -50,7 +50,7 @@ class HoT(Buff):
             self.radiate_healing(caster, current_time)
              
     def calculate_tick_healing(self, caster):
-        spell_power = caster.stats.ratings["intellect"]
+        spell_power = caster.spell_power
         
         total_healing = spell_power * self.SPELL_POWER_COEFFICIENT * caster.healing_multiplier
         
@@ -141,6 +141,7 @@ class BroodkeepersPromiseHoT(HoT):
 # ptr
 class Dawnlight(HoT):
     
+    # TODO verify 22.5% higher
     SPELL_POWER_COEFFICIENT = 6
     
     def __init__(self, caster):
@@ -176,6 +177,7 @@ class EternalFlameBuff(HoT):
 
 class SunSear(HoT):
     
+    # TODO verify 22.5% higher
     SPELL_POWER_COEFFICIENT = 0.6
     
     def __init__(self, caster):
@@ -2561,23 +2563,23 @@ class SolarGrace(Buff):
         self.active_solar_graces = 0
         
     def apply_effect(self, caster, current_time=None):
-        caster.flat_haste -= 4 * self.active_solar_graces
+        caster.flat_haste -= 3 * self.active_solar_graces
         self.active_solar_graces += 1
-        caster.flat_haste += 4 * self.active_solar_graces
+        caster.flat_haste += 3 * self.active_solar_graces
         caster.update_stat("haste", 0)
         caster.update_hasted_cooldowns_with_haste_changes()
         
         # TODO verify if multiplicative
-        # update_stat_with_multiplicative_percentage(caster, "haste", 4 * self.active_solar_graces, False)
+        # update_stat_with_multiplicative_percentage(caster, "haste", 3 * self.active_solar_graces, False)
         # self.active_solar_graces += 1
-        # update_stat_with_multiplicative_percentage(caster, "haste", 4 * self.active_solar_graces, True)
+        # update_stat_with_multiplicative_percentage(caster, "haste", 3 * self.active_solar_graces, True)
         
     def remove_effect(self, caster, current_time=None):
-        caster.flat_haste -= 4
+        caster.flat_haste -= 3
         caster.update_stat("haste", 0)
         caster.update_hasted_cooldowns_with_haste_changes()
         
-        # update_stat_with_multiplicative_percentage(caster, "haste", 4, False)
+        # update_stat_with_multiplicative_percentage(caster, "haste", 3, False)
         # self.active_solar_graces -= 1
     
 

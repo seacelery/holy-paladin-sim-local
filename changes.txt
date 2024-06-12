@@ -1,3 +1,4 @@
-ac duration, cs charges, ac holy power
-cm judge
-holy light cast time
+wog ef lod prism healing
+glimmer healing tyrs healing
+tyrs bonus on hs holy light fol
+solar grace to 3%
