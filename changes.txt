@@ -1,4 +1,8 @@
-wog ef lod prism healing
-glimmer healing tyrs healing
-tyrs bonus on hs holy light fol
-solar grace to 3%
+suns avatar created
+suns avatar active created
+ef wog lod remove dawnlight cap, add suns avatar
+wings ac remove dawnlight cap, add suns avatar
+suns avatar active on wings buff
+increment passive heal over time
+suns avatar heal
+awakening changes

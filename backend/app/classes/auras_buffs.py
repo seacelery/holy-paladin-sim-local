@@ -2,7 +2,7 @@ import random
 import re
 
 from .auras import Buff
-from ..utils.misc_functions import format_time, update_mana_gained, update_self_buff_data, update_spell_data_heals, add_talent_healing_multipliers
+from ..utils.misc_functions import format_time, update_mana_gained, update_self_buff_data, update_spell_data_heals, add_talent_healing_multipliers, update_target_buff_data
 from ..utils.stat_values import update_stat_with_multiplicative_percentage
 
 
@@ -158,13 +158,19 @@ class Dawnlight(HoT):
         for target in targets:            
             tick_healing, spell_crit = self.calculate_tick_healing(caster)
         
-            radiation_healing = tick_healing * 0.1
+            # double dipping is a bug
+            radiation_healing = tick_healing * 0.1 * caster.mastery_multiplier * caster.versatility_multiplier
 
             target.receive_heal(radiation_healing, caster)
             update_spell_data_heals(caster.ability_breakdown, "Dawnlight (AoE)", target, radiation_healing, spell_crit)
             
             caster.handle_beacon_healing("Dawnlight (AoE)", target, radiation_healing, current_time)
- 
+            
+    def remove_effect(self, caster, current_time, target):
+        if "Sun's Avatar" in target.target_active_buffs:
+            del target.target_active_buffs["Sun's Avatar"]
+            update_target_buff_data(caster.target_buff_breakdown, "Sun's Avatar", current_time, "expired", target.name)
+        
  
 class EternalFlameBuff(HoT):
     
@@ -286,8 +292,11 @@ class AvengingWrathBuff(Buff):
             self.base_duration = 25
         
     def apply_effect(self, caster, current_time=None):
+        if caster.ptr and caster.is_talent_active("Sun's Avatar"):
+            caster.apply_buff_to_self(SunsAvatarActive(caster), current_time)
+        
         if "Avenging Wrath (Awakening)" in caster.active_auras:
-            caster.active_auras["Avenging Wrath (Awakening)"].remove_effect(caster)
+            caster.active_auras["Avenging Wrath (Awakening)"].remove_effect(caster, current_time)
             del caster.active_auras["Avenging Wrath (Awakening)"]   
             update_self_buff_data(caster.self_buff_breakdown, "Avenging Wrath (Awakening)", current_time, "expired")      
         
@@ -311,6 +320,15 @@ class AvengingWrathBuff(Buff):
         if caster.is_talent_active("Sanctified Wrath"):
             caster.abilities["Holy Shock"].cooldown /= 0.8
             caster.abilities["Holy Shock"].remaining_cooldown /= 0.8
+            
+        if caster.ptr and caster.is_talent_active("Sun's Avatar") and "Sun's Avatar Active" in caster.active_auras:
+            del caster.active_auras["Sun's Avatar Active"]   
+            update_self_buff_data(caster.self_buff_breakdown, "Sun's Avatar Active", current_time, "expired")   
+            
+        for target in caster.potential_healing_targets:
+            if "Sun's Avatar" in target.target_active_buffs:
+                del target.target_active_buffs["Sun's Avatar"]
+                update_target_buff_data(caster.target_buff_breakdown, "Sun's Avatar", current_time, "expired", target)
        
        
 class AvengingWrathAwakening(Buff):
@@ -325,12 +343,55 @@ class AvengingWrathAwakening(Buff):
         caster.healing_multiplier *= 1.15
         caster.damage_multiplier *= 1.15
         
+        # sun's avatar
+        if caster.ptr and caster.is_talent_active("Dawnlight") and caster.is_talent_active("Sun's Avatar"):
+            caster.apply_buff_to_self(SunsAvatarActive(caster), current_time)
+            
+            dawnlight_targets = [target for target in caster.potential_healing_targets if "Dawnlight (HoT)" in target.target_active_buffs]        
+            non_dawnlight_targets = [target for target in caster.potential_healing_targets if "Dawnlight (HoT)" not in target.target_active_buffs]
+            dawnlights_to_apply = 4
+            chosen_targets = random.sample(non_dawnlight_targets, dawnlights_to_apply)
+            for target in chosen_targets:
+                target.apply_buff_to_target(Dawnlight(caster), current_time, caster=caster)
+                target.apply_buff_to_target(SunsAvatar(caster), current_time, caster=caster)
+                
+                if caster.is_talent_active("Solar Grace"):
+                    caster.apply_buff_to_self(SolarGrace(caster), current_time)
+            
+                if caster.is_talent_active("Gleaming Rays"):
+                    caster.apply_buff_to_self(GleamingRays(caster), current_time, reapply=True)
+                
+                if "Morning Star" in caster.active_auras:
+                    caster.active_auras["Morning Star"].current_stacks = 0
+                
+            for target in dawnlight_targets:
+                target.apply_buff_to_target(Dawnlight(caster), current_time, caster=caster)
+                target.apply_buff_to_target(EternalFlameBuff(caster, 12), current_time, caster=caster)
+                
+                if caster.is_talent_active("Solar Grace"):
+                    caster.apply_buff_to_self(SolarGrace(caster), current_time)
+            
+                if caster.is_talent_active("Gleaming Rays"):
+                    caster.apply_buff_to_self(GleamingRays(caster), current_time, reapply=True)
+                
+                if "Morning Star" in caster.active_auras:
+                    caster.active_auras["Morning Star"].current_stacks = 0
+        
     def remove_effect(self, caster, current_time=None):
         if caster.is_talent_active("Avenging Wrath: Might"):
             caster.flat_crit -= 15
             caster.update_stat("crit", 0)
         caster.healing_multiplier /= 1.15
         caster.damage_multiplier /= 1.15
+        
+        if caster.ptr and caster.is_talent_active("Sun's Avatar") and "Sun's Avatar Active" in caster.active_auras:
+            del caster.active_auras["Sun's Avatar Active"]   
+            update_self_buff_data(caster.self_buff_breakdown, "Sun's Avatar Active", current_time, "expired")  
+        
+        for target in caster.potential_healing_targets:
+            if "Sun's Avatar" in target.target_active_buffs:
+                del target.target_active_buffs["Sun's Avatar"]
+                update_target_buff_data(caster.target_buff_breakdown, "Sun's Avatar", current_time, "expired", target)
         
 
 class AvengingCrusaderBuff(Buff):
@@ -348,8 +409,11 @@ class AvengingCrusaderBuff(Buff):
             self.base_duration = 15
         
     def apply_effect(self, caster, current_time=None):
+        if caster.ptr and caster.is_talent_active("Sun's Avatar"):
+            caster.apply_buff_to_self(SunsAvatarActive(caster), current_time)
+        
         if "Avenging Crusader (Awakening)" in caster.active_auras:
-            caster.active_auras["Avenging Crusader (Awakening)"].remove_effect(caster)
+            caster.active_auras["Avenging Crusader (Awakening)"].remove_effect(caster, current_time)
             del caster.active_auras["Avenging Crusader (Awakening)"]   
             update_self_buff_data(caster.self_buff_breakdown, "Avenging Crusader (Awakening)", current_time, "expired")      
         
@@ -361,6 +425,15 @@ class AvengingCrusaderBuff(Buff):
         if caster.is_talent_active("Sanctified Wrath"):
             caster.abilities["Holy Shock"].cooldown /= 0.8
             caster.abilities["Holy Shock"].remaining_cooldown /= 0.8
+            
+        if caster.ptr and caster.is_talent_active("Sun's Avatar") and "Sun's Avatar Active" in caster.active_auras:
+            del caster.active_auras["Sun's Avatar Active"]   
+            update_self_buff_data(caster.self_buff_breakdown, "Sun's Avatar Active", current_time, "expired")  
+            
+        for target in caster.potential_healing_targets:
+            if "Sun's Avatar" in target.target_active_buffs:
+                del target.target_active_buffs["Sun's Avatar"]
+                update_target_buff_data(caster.target_buff_breakdown, "Sun's Avatar", current_time, "expired", target)
       
       
 class AvengingCrusaderAwakening(Buff):
@@ -369,10 +442,49 @@ class AvengingCrusaderAwakening(Buff):
         super().__init__("Avenging Crusader (Awakening)", 8, base_duration=8)
         
     def apply_effect(self, caster, current_time=None):
-        pass
+        # sun's avatar
+        if caster.ptr and caster.is_talent_active("Dawnlight") and caster.is_talent_active("Sun's Avatar"):
+            caster.apply_buff_to_self(SunsAvatarActive(caster), current_time)
+            
+            dawnlight_targets = [target for target in caster.potential_healing_targets if "Dawnlight (HoT)" in target.target_active_buffs]        
+            non_dawnlight_targets = [target for target in caster.potential_healing_targets if "Dawnlight (HoT)" not in target.target_active_buffs]
+            dawnlights_to_apply = 4
+            chosen_targets = random.sample(non_dawnlight_targets, dawnlights_to_apply)
+            for target in chosen_targets:
+                target.apply_buff_to_target(Dawnlight(caster), current_time, caster=caster)
+                target.apply_buff_to_target(SunsAvatar(caster), current_time, caster=caster)
+                
+                if caster.is_talent_active("Solar Grace"):
+                    caster.apply_buff_to_self(SolarGrace(caster), current_time)
+            
+                if caster.is_talent_active("Gleaming Rays"):
+                    caster.apply_buff_to_self(GleamingRays(caster), current_time, reapply=True)
+                
+                if "Morning Star" in caster.active_auras:
+                    caster.active_auras["Morning Star"].current_stacks = 0
+                
+            for target in dawnlight_targets:
+                target.apply_buff_to_target(Dawnlight(caster), current_time, caster=caster)
+                target.apply_buff_to_target(EternalFlameBuff(caster, 12), current_time, caster=caster)
+                
+                if caster.is_talent_active("Solar Grace"):
+                    caster.apply_buff_to_self(SolarGrace(caster), current_time)
+            
+                if caster.is_talent_active("Gleaming Rays"):
+                    caster.apply_buff_to_self(GleamingRays(caster), current_time, reapply=True)
+                
+                if "Morning Star" in caster.active_auras:
+                    caster.active_auras["Morning Star"].current_stacks = 0
         
     def remove_effect(self, caster, current_time=None):
-        pass
+        if caster.ptr and caster.is_talent_active("Sun's Avatar") and "Sun's Avatar Active" in caster.active_auras:
+            del caster.active_auras["Sun's Avatar Active"]   
+            update_self_buff_data(caster.self_buff_breakdown, "Sun's Avatar Active", current_time, "expired")  
+        
+        for target in caster.potential_healing_targets:
+            if "Sun's Avatar" in target.target_active_buffs:
+                del target.target_active_buffs["Sun's Avatar"]
+                update_target_buff_data(caster.target_buff_breakdown, "Sun's Avatar", current_time, "expired", target)
   
 
 class BarrierOfFaithBuff(Buff):
@@ -2641,3 +2753,40 @@ class RiteOfAdjuration(Buff):
         
     def remove_effect(self, caster, current_time=None):
         pass
+    
+
+class SunsAvatar(Buff):
+    
+    def __init__(self, caster):
+        super().__init__("Sun's Avatar", 8, base_duration=8)   
+        
+    def apply_effect(self, caster, current_time=None):
+        pass
+        
+    def remove_effect(self, caster, current_time=None):
+        pass
+    
+
+class SunsAvatarActive(Buff):
+        
+        def __init__(self, caster):
+            super().__init__("Sun's Avatar Active", 10000, base_duration=10000)   
+            self.timer = 0
+            
+        def apply_effect(self, caster, current_time=None):
+            pass
+            
+        def remove_effect(self, caster, current_time=None):
+            pass
+        
+        def trigger_passive_heal(self, caster, current_time, target_count):
+            from .spells_healing import SunsAvatarHeal
+        
+            targets = random.choices(caster.potential_healing_targets, k=target_count)
+            for target in targets:            
+                suns_avatar_heal, suns_avatar_crit = SunsAvatarHeal(caster).calculate_heal(caster)
+
+                target.receive_heal(suns_avatar_heal, caster)
+                update_spell_data_heals(caster.ability_breakdown, "Sun's Avatar", target, suns_avatar_heal, suns_avatar_crit)
+        
+        
