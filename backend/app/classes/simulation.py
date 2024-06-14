@@ -5,7 +5,7 @@ from flask_socketio import emit
 
 from .target import EnemyTarget, SmolderingSeedling
 from .trinkets import Trinket
-from .auras_buffs import HolyReverberation, HoT, BeaconOfLightBuff, AvengingWrathAwakening, AvengingCrusaderAwakening, TimeWarp, BestFriendsWithAerwynEmpowered, BestFriendsWithPipEmpowered, BestFriendsWithUrctosEmpowered, CorruptingRage, RetributionAuraTrigger, LightOfTheMartyrBuff, BestowLight, EternalFlameBuff, InfusionOfLight
+from .auras_buffs import HolyReverberation, HoT, BeaconOfLightBuff, AvengingWrathAwakening, AvengingCrusaderAwakening, TimeWarp, BestFriendsWithAerwynEmpowered, BestFriendsWithPipEmpowered, BestFriendsWithUrctosEmpowered, CorruptingRage, RetributionAuraTrigger, LightOfTheMartyrBuff, BestowLight, EternalFlameBuff, InfusionOfLight, SunsAvatarActive
 from ..utils.misc_functions import append_aura_removed_event, format_time, update_self_buff_data, update_target_buff_data, update_mana_gained, handle_flat_cdr
 from .priority_list_dsl import parse_condition, condition_to_lambda
 from .simulation_state import check_cancellation, reset_simulation
@@ -523,6 +523,12 @@ class Simulation:
                         self.paladin.apply_buff_to_self(InfusionOfLight(self.paladin), self.elapsed_time, reapply=True)
 
             self.paladin.active_auras[buff_name].remove_effect(self.paladin, self.elapsed_time)
+            
+            if buff_name == "Avenging Wrath" and "Avenging Wrath (Awakening)" in self.paladin.active_auras:
+                self.paladin.apply_buff_to_self(SunsAvatarActive(self.paladin), self.elapsed_time)
+                
+            if buff_name == "Avenging Crusader" and "Avenging Crusader (Awakening)" in self.paladin.active_auras:
+                self.paladin.apply_buff_to_self(SunsAvatarActive(self.paladin), self.elapsed_time)
             
             # if the remove effect method refreshes the buff duration, then don't remove it
             if self.paladin.active_auras[buff_name].duration <= 0:
