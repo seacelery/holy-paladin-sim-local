@@ -672,7 +672,7 @@ class Simulation:
             "Blossom of Amirdrassil Small HoT", "Barrier of Faith (Holy Shock)", "Barrier of Faith (Flash of Light)", "Barrier of Faith (Holy Light)", 
             "Veneration", "Golden Path", "Seal of Mercy", "Avenging Crusader (Judgment)", "Avenging Crusader (Crusader Strike)",
             "Dawnlight (HoT)", "Dawnlight (AoE)", "Glimmer of Light (Glistening Radiance (Eternal Flame))", "Afterimage (Eternal Flame)",
-            "Eternal Flame (HoT)", "Sacred Weapon 1", "Sacred Weapon 2"
+            "Eternal Flame (HoT)", "Sacred Weapon 1", "Sacred Weapon 2", "Divine Guidance", "Hammer and Anvil"
         ]
         
         # first spell belongs to the second
@@ -695,6 +695,7 @@ class Simulation:
             "Crusader's Reprieve": "Crusader Strike",
             "Greater Judgment": "Judgment",
             "Judgment of Light": "Judgment",
+            "Hammer and Anvil": "Judgment",
             "Afterimage (Word of Glory)": "Word of Glory",
             "Afterimage (Eternal Flame)": "Eternal Flame",
             "Barrier of Faith (Holy Shock)": "Barrier of Faith",
@@ -710,6 +711,7 @@ class Simulation:
             "Veneration": "Hammer of Wrath",
             "Golden Path": "Consecration",
             "Seal of Mercy": "Consecration",
+            "Divine Guidance": "Consecration",
             "Avenging Crusader (Judgment)": "Avenging Crusader",
             "Avenging Crusader (Crusader Strike)": "Avenging Crusader",
             "Dawnlight (HoT)": "Dawnlight",

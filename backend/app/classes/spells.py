@@ -121,7 +121,7 @@ class Spell:
 
         return True, spell_crit, damage_value
         
-    def cast_healing_spell(self, caster, targets, current_time, is_heal, exclude_mastery=False, ignore_spell_multiplier=False):
+    def cast_healing_spell(self, caster, targets, current_time, is_heal, exclude_mastery=False, ignore_spell_multiplier=False, exclude_cast=False):
         if not self.can_cast(caster):         
             return False, False, 0
     
@@ -177,7 +177,7 @@ class Spell:
                     if self.aoe_cast_counter == target_count:
                         caster.mana -= mana_cost
                         # add spell, mana cost, holy power attributes, and increment casts
-                        if self.name in ["Light's Hammer"]:
+                        if self.name in ["Light's Hammer"] or exclude_cast:
                             update_spell_data_casts(caster.ability_breakdown, self.name, mana_cost, 0, self.holy_power_cost, exclude_casts=True)
                         else:
                             update_spell_data_casts(caster.ability_breakdown, self.name, mana_cost, 0, self.holy_power_cost)
@@ -191,7 +191,7 @@ class Spell:
                     caster.mana -= mana_cost
                     
                     # exclude casts for certain spells
-                    if self.name in ["Tyr's Deliverance"]:
+                    if self.name in ["Tyr's Deliverance"] or exclude_cast:
                         update_spell_data_casts(caster.ability_breakdown, self.name, mana_cost, 0, self.holy_power_cost, exclude_casts=True)
                     else:
                         update_spell_data_casts(caster.ability_breakdown, self.name, mana_cost, 0, self.holy_power_cost)
@@ -300,8 +300,10 @@ class Spell:
             update_spell_data_heals(caster.ability_breakdown, "Leech", caster, heal_amount * (caster.leech / 100) * leech_multiplier, False)
         
         # if self.name == "Glimmer of Light":  
-        #     print(f"Calculating heal for {self.name}, {spell_power} * {self.SPELL_POWER_COEFFICIENT} * {caster.healing_multiplier} * {versatility_multiplier} * {crit_multiplier} * {mastery_multiplier} * {self.spell_healing_modifier} * {caster_crit_healing_modifier}")
+            
+        # if "Holy Shock" in self.name:
         #     print(f"Heal amount for {self.name}, {heal_amount}")
+        #     print(f"Calculating heal for {self.name}, {spell_power} * {self.SPELL_POWER_COEFFICIENT} * {caster.healing_multiplier} * {versatility_multiplier} * {crit_multiplier} * {mastery_multiplier} * {self.spell_healing_modifier} * {caster_crit_healing_modifier}")
         return heal_amount, is_crit
     
     def calculate_damage(self, caster, bonus_crit=0, bonus_versatility=0):

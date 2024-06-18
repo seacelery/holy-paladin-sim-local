@@ -1,8 +1,4 @@
-suns avatar created
-suns avatar active created
-ef wog lod remove dawnlight cap, add suns avatar
-wings ac remove dawnlight cap, add suns avatar
-suns avatar active on wings buff
-increment passive heal over time
-suns avatar heal
-awakening changes
+second sunrise all holy shocks, lod - exclude cast in spells
+divine inspiration
+blessed assurance
+divine guidance

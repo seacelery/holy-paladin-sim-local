@@ -94,9 +94,14 @@ class DivineInspiration(Spell):
         non_weapon_targets = [target for target in caster.potential_healing_targets if chosen_weapon.name not in target.target_active_buffs]
         
         chosen_target = random.choice(non_weapon_targets)
+        if chosen_weapon == holy_bulwark:
+            holy_bulwark_initial_absorb = caster.max_health * 0.15
+
+            chosen_target.receive_heal(holy_bulwark_initial_absorb, caster)
+            update_spell_data_heals(caster.ability_breakdown, "Holy Bulwark", chosen_target, holy_bulwark_initial_absorb, False)
         chosen_target.apply_buff_to_target(chosen_weapon, current_time, caster=caster)
         
-
+        
 class ChirpingRune(Spell):
     
     SPELL_POWER_COEFFICIENT = 0
