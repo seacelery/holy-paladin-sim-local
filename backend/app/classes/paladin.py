@@ -13,7 +13,7 @@ from .spells_healing import HolyShock, WordOfGlory, LightOfDawn, FlashOfLight, H
 from .spells_misc import ArcaneTorrent, AeratedManaPotion, Potion, ElementalPotionOfUltimatePowerPotion, AuraMastery
 from .spells_damage import Judgment, CrusaderStrike, HammerOfWrath, Consecration
 from .spells_auras import AvengingWrathSpell, AvengingCrusaderSpell, DivineFavorSpell, TyrsDeliveranceSpell, BlessingOfTheSeasons, FirebloodSpell, GiftOfTheNaaruSpell, HandOfDivinitySpell, BarrierOfFaithSpell, BeaconOfFaithSpell, BeaconOfVirtueSpell, HolyBulwarkSacredWeapon
-from .auras_buffs import PipsEmeraldFriendshipBadge, BestFriendsWithPip, BestFriendsWithAerwyn, BestFriendsWithUrctos, MercifulAuras, SavedByTheLight, OminousChromaticEssence, IncarnatesMarkOfFire, BroodkeepersPromiseHoT, MorningStar, RiteOfAdjuration, RiteOfSanctification
+from .auras_buffs import PipsEmeraldFriendshipBadge, BestFriendsWithPip, BestFriendsWithAerwyn, BestFriendsWithUrctos, MercifulAuras, SavedByTheLight, OminousChromaticEssence, IncarnatesMarkOfFire, BroodkeepersPromiseHoT, MorningStar, RiteOfAdjurationBuff, RiteOfSanctification
 from .trinkets import MirrorOfFracturedTomorrows, SmolderingSeedling, NymuesUnravelingSpindle, ConjuredChillglobe, TimeBreachingTalon, SpoilsOfNeltharus, MiniatureSingingStone
 from ..utils.talents.base_talent_dictionaries import base_active_class_talents, base_active_spec_talents, base_active_class_talents_ptr, base_active_spec_talents_ptr, base_active_lightsmith_talents, base_herald_of_the_sun_talents
 from ..utils.gems_and_enchants import convert_enchants_to_stats, return_enchants_stats, return_gem_stats
@@ -61,10 +61,10 @@ class Paladin:
             self.lightsmith_talents = copy.deepcopy(self.talents.lightsmith_talents)
             self.herald_of_the_sun_talents = copy.deepcopy(self.talents.herald_of_the_sun_talents)
         
-        self.base_mana = 250000
+        self.base_mana = 250000 if not self.ptr else 2500000
         self.mana = self.base_mana
         self.max_mana = self.base_mana
-        self.mana_regen_per_second = 2000
+        self.mana_regen_per_second = 2000 if not self.ptr else 20000
         self.innervate_active = False
         
         self.base_flat_haste = 0
@@ -538,7 +538,7 @@ class Paladin:
         if self.is_talent_active("Hammer of Wrath"):
             self.abilities["Hammer of Wrath"] = HammerOfWrath(self)
             
-        if self.is_talent_active("Divine Favor"):
+        if self.is_talent_active("Divine Favor") and not self.ptr:
             self.abilities["Divine Favor"] = DivineFavorSpell(self)
             
         if self.is_talent_active("Hand of Divinity"):
@@ -659,7 +659,7 @@ class Paladin:
             self.apply_buff_to_self(RiteOfSanctification(self), 0)
             
         if self.ptr and self.is_talent_active("Rite of Adjuration"):
-            self.apply_buff_to_self(RiteOfAdjuration(self), 0)
+            self.apply_buff_to_self(RiteOfAdjurationBuff(self), 0)
     
     # misc simulation functions 
     def print_stats(self, current_time):
