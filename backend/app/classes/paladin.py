@@ -21,9 +21,6 @@ from .api_client import APIClient
 
 pp = pprint.PrettyPrinter(width=200)
 
-# TODO
-# seal of the crusader
-
 
 class Stats:
     
