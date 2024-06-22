@@ -275,7 +275,7 @@ templateButton.addEventListener("click", () => {
         "character_name": "Skaneschnell",
         "character_realm": "Twisting Nether",
         "character_region": "eu",
-        "race": "Dwarf",
+        "race": "Human",
         "class_talents": templateClassTalents,
         "spec_talents": templateSpecTalents,
         "equipment": templateEquipment,
