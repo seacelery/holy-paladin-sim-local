@@ -19,7 +19,7 @@ import { updateEquipmentFromImportedData, initialiseEquipment, generateFullItemD
 import { formatNumbers, formatNumbersNoRounding, formatTime, formatThousands, makeFieldEditable, updateEquipmentWithEffectValues, createTooltip, addTooltipFunctionality } from "../utils/misc-functions.js";
 import { realmList } from "../utils/data/realm-list.js";
 import { createOptionsSliders, roundIterations } from "../components/create-options-sliders.js";
-import { templateClassTalents, templateSpecTalents, templateEquipment } from "../utils/template-settings.js";
+import { templateClassTalents, templateSpecTalents, templateUpdateClassTalents, templateUpdateSpecTalents, templateEquipment } from "../utils/template-settings.js";
 
 // functions
 const createElement = (elementName, className = null, id = null) => {
@@ -290,6 +290,12 @@ templateButton.addEventListener("click", () => {
     initialiseEquipment();
     updateStats();
     isFirstImport = false;
+
+    updateCharacter({
+        "class_talents": templateUpdateClassTalents,
+        "spec_talents": templateUpdateSpecTalents,
+                        
+    });
 });
 
 // request functions
