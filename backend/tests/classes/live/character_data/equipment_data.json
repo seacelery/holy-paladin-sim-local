@@ -36,7 +36,7 @@
         {
             "item": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item/200417?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item/200417?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 200417
             },
@@ -61,7 +61,7 @@
                     },
                     "item": {
                         "key": {
-                            "href": "https://eu.api.blizzard.com/data/wow/item/192952?namespace=static-10.2.6_53703-eu"
+                            "href": "https://eu.api.blizzard.com/data/wow/item/192952?namespace=static-10.2.7_54366-eu"
                         },
                         "name": {
                             "en_US": "Energized Ysemerald",
@@ -95,7 +95,7 @@
                     },
                     "media": {
                         "key": {
-                            "href": "https://eu.api.blizzard.com/data/wow/media/item/192952?namespace=static-10.2.6_53703-eu"
+                            "href": "https://eu.api.blizzard.com/data/wow/media/item/192952?namespace=static-10.2.7_54366-eu"
                         },
                         "id": 192952
                     }
@@ -163,13 +163,13 @@
             "modified_appearance_id": 182858,
             "media": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/media/item/200417?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/media/item/200417?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 200417
             },
             "item_class": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Armor",
@@ -189,7 +189,7 @@
             },
             "item_subclass": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4/item-subclass/4?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4/item-subclass/4?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Plate",
@@ -564,7 +564,7 @@
                     "links": [
                         {
                             "key": {
-                                "href": "https://eu.api.blizzard.com/data/wow/playable-class/2?namespace=static-10.2.6_53703-eu"
+                                "href": "https://eu.api.blizzard.com/data/wow/playable-class/2?namespace=static-10.2.7_54366-eu"
                             },
                             "name": {
                                 "en_US": "Paladin",
@@ -602,7 +602,7 @@
             "set": {
                 "item_set": {
                     "key": {
-                        "href": "https://eu.api.blizzard.com/data/wow/item-set/1533?namespace=static-10.2.6_53703-eu"
+                        "href": "https://eu.api.blizzard.com/data/wow/item-set/1533?namespace=static-10.2.7_54366-eu"
                     },
                     "name": {
                         "en_US": "Virtuous Silver Cataphract",
@@ -624,7 +624,7 @@
                     {
                         "item": {
                             "key": {
-                                "href": "https://eu.api.blizzard.com/data/wow/item/200414?namespace=static-10.2.6_53703-eu"
+                                "href": "https://eu.api.blizzard.com/data/wow/item/200414?namespace=static-10.2.7_54366-eu"
                             },
                             "name": {
                                 "en_US": "Virtuous Silver Breastplate",
@@ -647,7 +647,7 @@
                     {
                         "item": {
                             "key": {
-                                "href": "https://eu.api.blizzard.com/data/wow/item/200416?namespace=static-10.2.6_53703-eu"
+                                "href": "https://eu.api.blizzard.com/data/wow/item/200416?namespace=static-10.2.7_54366-eu"
                             },
                             "name": {
                                 "en_US": "Virtuous Silver Gauntlets",
@@ -670,7 +670,7 @@
                     {
                         "item": {
                             "key": {
-                                "href": "https://eu.api.blizzard.com/data/wow/item/200417?namespace=static-10.2.6_53703-eu"
+                                "href": "https://eu.api.blizzard.com/data/wow/item/200417?namespace=static-10.2.7_54366-eu"
                             },
                             "name": {
                                 "en_US": "Virtuous Silver Heaume",
@@ -693,7 +693,7 @@
                     {
                         "item": {
                             "key": {
-                                "href": "https://eu.api.blizzard.com/data/wow/item/200418?namespace=static-10.2.6_53703-eu"
+                                "href": "https://eu.api.blizzard.com/data/wow/item/200418?namespace=static-10.2.7_54366-eu"
                             },
                             "name": {
                                 "en_US": "Virtuous Silver Cuisses",
@@ -716,7 +716,7 @@
                     {
                         "item": {
                             "key": {
-                                "href": "https://eu.api.blizzard.com/data/wow/item/200419?namespace=static-10.2.6_53703-eu"
+                                "href": "https://eu.api.blizzard.com/data/wow/item/200419?namespace=static-10.2.7_54366-eu"
                             },
                             "name": {
                                 "en_US": "Virtuous Silver Pauldrons",
@@ -810,7 +810,7 @@
             "transmog": {
                 "item": {
                     "key": {
-                        "href": "https://eu.api.blizzard.com/data/wow/item/184994?namespace=static-10.2.6_53703-eu"
+                        "href": "https://eu.api.blizzard.com/data/wow/item/184994?namespace=static-10.2.7_54366-eu"
                     },
                     "name": {
                         "en_US": "Aspiring Aspirant's Hood",
@@ -865,7 +865,7 @@
         {
             "item": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item/195502?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item/195502?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 195502
             },
@@ -890,7 +890,7 @@
                     },
                     "item": {
                         "key": {
-                            "href": "https://eu.api.blizzard.com/data/wow/item/192985?namespace=static-10.2.6_53703-eu"
+                            "href": "https://eu.api.blizzard.com/data/wow/item/192985?namespace=static-10.2.7_54366-eu"
                         },
                         "name": {
                             "en_US": "Fierce Illimited Diamond",
@@ -924,7 +924,7 @@
                     },
                     "media": {
                         "key": {
-                            "href": "https://eu.api.blizzard.com/data/wow/media/item/192985?namespace=static-10.2.6_53703-eu"
+                            "href": "https://eu.api.blizzard.com/data/wow/media/item/192985?namespace=static-10.2.7_54366-eu"
                         },
                         "id": 192985
                     }
@@ -949,7 +949,7 @@
                     },
                     "item": {
                         "key": {
-                            "href": "https://eu.api.blizzard.com/data/wow/item/192952?namespace=static-10.2.6_53703-eu"
+                            "href": "https://eu.api.blizzard.com/data/wow/item/192952?namespace=static-10.2.7_54366-eu"
                         },
                         "name": {
                             "en_US": "Energized Ysemerald",
@@ -983,7 +983,7 @@
                     },
                     "media": {
                         "key": {
-                            "href": "https://eu.api.blizzard.com/data/wow/media/item/192952?namespace=static-10.2.6_53703-eu"
+                            "href": "https://eu.api.blizzard.com/data/wow/media/item/192952?namespace=static-10.2.7_54366-eu"
                         },
                         "id": 192952
                     }
@@ -1008,7 +1008,7 @@
                     },
                     "item": {
                         "key": {
-                            "href": "https://eu.api.blizzard.com/data/wow/item/192952?namespace=static-10.2.6_53703-eu"
+                            "href": "https://eu.api.blizzard.com/data/wow/item/192952?namespace=static-10.2.7_54366-eu"
                         },
                         "name": {
                             "en_US": "Energized Ysemerald",
@@ -1042,7 +1042,7 @@
                     },
                     "media": {
                         "key": {
-                            "href": "https://eu.api.blizzard.com/data/wow/media/item/192952?namespace=static-10.2.6_53703-eu"
+                            "href": "https://eu.api.blizzard.com/data/wow/media/item/192952?namespace=static-10.2.7_54366-eu"
                         },
                         "id": 192952
                     }
@@ -1109,13 +1109,13 @@
             "modified_appearance_id": 0,
             "media": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/media/item/195502?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/media/item/195502?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 195502
             },
             "item_class": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Armor",
@@ -1135,7 +1135,7 @@
             },
             "item_subclass": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4/item-subclass/0?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4/item-subclass/0?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Miscellaneous",
@@ -1498,7 +1498,7 @@
         {
             "item": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item/200419?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item/200419?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 200419
             },
@@ -1563,13 +1563,13 @@
             "modified_appearance_id": 182866,
             "media": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/media/item/200419?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/media/item/200419?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 200419
             },
             "item_class": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Armor",
@@ -1589,7 +1589,7 @@
             },
             "item_subclass": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4/item-subclass/4?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4/item-subclass/4?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Plate",
@@ -1964,7 +1964,7 @@
                     "links": [
                         {
                             "key": {
-                                "href": "https://eu.api.blizzard.com/data/wow/playable-class/2?namespace=static-10.2.6_53703-eu"
+                                "href": "https://eu.api.blizzard.com/data/wow/playable-class/2?namespace=static-10.2.7_54366-eu"
                             },
                             "name": {
                                 "en_US": "Paladin",
@@ -2002,7 +2002,7 @@
             "set": {
                 "item_set": {
                     "key": {
-                        "href": "https://eu.api.blizzard.com/data/wow/item-set/1533?namespace=static-10.2.6_53703-eu"
+                        "href": "https://eu.api.blizzard.com/data/wow/item-set/1533?namespace=static-10.2.7_54366-eu"
                     },
                     "name": {
                         "en_US": "Virtuous Silver Cataphract",
@@ -2024,7 +2024,7 @@
                     {
                         "item": {
                             "key": {
-                                "href": "https://eu.api.blizzard.com/data/wow/item/200414?namespace=static-10.2.6_53703-eu"
+                                "href": "https://eu.api.blizzard.com/data/wow/item/200414?namespace=static-10.2.7_54366-eu"
                             },
                             "name": {
                                 "en_US": "Virtuous Silver Breastplate",
@@ -2047,7 +2047,7 @@
                     {
                         "item": {
                             "key": {
-                                "href": "https://eu.api.blizzard.com/data/wow/item/200416?namespace=static-10.2.6_53703-eu"
+                                "href": "https://eu.api.blizzard.com/data/wow/item/200416?namespace=static-10.2.7_54366-eu"
                             },
                             "name": {
                                 "en_US": "Virtuous Silver Gauntlets",
@@ -2070,7 +2070,7 @@
                     {
                         "item": {
                             "key": {
-                                "href": "https://eu.api.blizzard.com/data/wow/item/200417?namespace=static-10.2.6_53703-eu"
+                                "href": "https://eu.api.blizzard.com/data/wow/item/200417?namespace=static-10.2.7_54366-eu"
                             },
                             "name": {
                                 "en_US": "Virtuous Silver Heaume",
@@ -2093,7 +2093,7 @@
                     {
                         "item": {
                             "key": {
-                                "href": "https://eu.api.blizzard.com/data/wow/item/200418?namespace=static-10.2.6_53703-eu"
+                                "href": "https://eu.api.blizzard.com/data/wow/item/200418?namespace=static-10.2.7_54366-eu"
                             },
                             "name": {
                                 "en_US": "Virtuous Silver Cuisses",
@@ -2116,7 +2116,7 @@
                     {
                         "item": {
                             "key": {
-                                "href": "https://eu.api.blizzard.com/data/wow/item/200419?namespace=static-10.2.6_53703-eu"
+                                "href": "https://eu.api.blizzard.com/data/wow/item/200419?namespace=static-10.2.7_54366-eu"
                             },
                             "name": {
                                 "en_US": "Virtuous Silver Pauldrons",
@@ -2210,7 +2210,7 @@
             "transmog": {
                 "item": {
                     "key": {
-                        "href": "https://eu.api.blizzard.com/data/wow/item/134112?namespace=static-10.2.6_53703-eu"
+                        "href": "https://eu.api.blizzard.com/data/wow/item/134112?namespace=static-10.2.7_54366-eu"
                     },
                     "name": {
                         "en_US": "Hidden Shoulder",
@@ -2265,7 +2265,7 @@
         {
             "item": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item/6795?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item/6795?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 6795
             },
@@ -2320,13 +2320,13 @@
             },
             "media": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/media/item/6795?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/media/item/6795?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 6795
             },
             "item_class": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Armor",
@@ -2346,7 +2346,7 @@
             },
             "item_subclass": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4/item-subclass/0?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4/item-subclass/0?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Miscellaneous",
@@ -2479,7 +2479,7 @@
             "transmog": {
                 "item": {
                     "key": {
-                        "href": "https://eu.api.blizzard.com/data/wow/item/53?namespace=static-10.2.6_53703-eu"
+                        "href": "https://eu.api.blizzard.com/data/wow/item/53?namespace=static-10.2.7_54366-eu"
                     },
                     "name": {
                         "en_US": "Neophyte's Shirt",
@@ -2518,7 +2518,7 @@
         {
             "item": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item/200414?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item/200414?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 200414
             },
@@ -2605,13 +2605,13 @@
             "modified_appearance_id": 182846,
             "media": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/media/item/200414?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/media/item/200414?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 200414
             },
             "item_class": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Armor",
@@ -2631,7 +2631,7 @@
             },
             "item_subclass": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4/item-subclass/4?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4/item-subclass/4?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Plate",
@@ -3049,7 +3049,7 @@
                     "links": [
                         {
                             "key": {
-                                "href": "https://eu.api.blizzard.com/data/wow/playable-class/2?namespace=static-10.2.6_53703-eu"
+                                "href": "https://eu.api.blizzard.com/data/wow/playable-class/2?namespace=static-10.2.7_54366-eu"
                             },
                             "name": {
                                 "en_US": "Paladin",
@@ -3087,7 +3087,7 @@
             "set": {
                 "item_set": {
                     "key": {
-                        "href": "https://eu.api.blizzard.com/data/wow/item-set/1533?namespace=static-10.2.6_53703-eu"
+                        "href": "https://eu.api.blizzard.com/data/wow/item-set/1533?namespace=static-10.2.7_54366-eu"
                     },
                     "name": {
                         "en_US": "Virtuous Silver Cataphract",
@@ -3109,7 +3109,7 @@
                     {
                         "item": {
                             "key": {
-                                "href": "https://eu.api.blizzard.com/data/wow/item/200414?namespace=static-10.2.6_53703-eu"
+                                "href": "https://eu.api.blizzard.com/data/wow/item/200414?namespace=static-10.2.7_54366-eu"
                             },
                             "name": {
                                 "en_US": "Virtuous Silver Breastplate",
@@ -3132,7 +3132,7 @@
                     {
                         "item": {
                             "key": {
-                                "href": "https://eu.api.blizzard.com/data/wow/item/200416?namespace=static-10.2.6_53703-eu"
+                                "href": "https://eu.api.blizzard.com/data/wow/item/200416?namespace=static-10.2.7_54366-eu"
                             },
                             "name": {
                                 "en_US": "Virtuous Silver Gauntlets",
@@ -3155,7 +3155,7 @@
                     {
                         "item": {
                             "key": {
-                                "href": "https://eu.api.blizzard.com/data/wow/item/200417?namespace=static-10.2.6_53703-eu"
+                                "href": "https://eu.api.blizzard.com/data/wow/item/200417?namespace=static-10.2.7_54366-eu"
                             },
                             "name": {
                                 "en_US": "Virtuous Silver Heaume",
@@ -3178,7 +3178,7 @@
                     {
                         "item": {
                             "key": {
-                                "href": "https://eu.api.blizzard.com/data/wow/item/200418?namespace=static-10.2.6_53703-eu"
+                                "href": "https://eu.api.blizzard.com/data/wow/item/200418?namespace=static-10.2.7_54366-eu"
                             },
                             "name": {
                                 "en_US": "Virtuous Silver Cuisses",
@@ -3201,7 +3201,7 @@
                     {
                         "item": {
                             "key": {
-                                "href": "https://eu.api.blizzard.com/data/wow/item/200419?namespace=static-10.2.6_53703-eu"
+                                "href": "https://eu.api.blizzard.com/data/wow/item/200419?namespace=static-10.2.7_54366-eu"
                             },
                             "name": {
                                 "en_US": "Virtuous Silver Pauldrons",
@@ -3295,7 +3295,7 @@
             "transmog": {
                 "item": {
                     "key": {
-                        "href": "https://eu.api.blizzard.com/data/wow/item/168659?namespace=static-10.2.6_53703-eu"
+                        "href": "https://eu.api.blizzard.com/data/wow/item/168659?namespace=static-10.2.7_54366-eu"
                     },
                     "name": {
                         "en_US": "Hidden Chestpiece",
@@ -3350,7 +3350,7 @@
         {
             "item": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item/193650?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item/193650?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 193650
             },
@@ -3375,7 +3375,7 @@
                     },
                     "item": {
                         "key": {
-                            "href": "https://eu.api.blizzard.com/data/wow/item/192935?namespace=static-10.2.6_53703-eu"
+                            "href": "https://eu.api.blizzard.com/data/wow/item/192935?namespace=static-10.2.7_54366-eu"
                         },
                         "name": {
                             "en_US": "Energized Malygite",
@@ -3409,7 +3409,7 @@
                     },
                     "media": {
                         "key": {
-                            "href": "https://eu.api.blizzard.com/data/wow/media/item/192935?namespace=static-10.2.6_53703-eu"
+                            "href": "https://eu.api.blizzard.com/data/wow/media/item/192935?namespace=static-10.2.7_54366-eu"
                         },
                         "id": 192935
                     }
@@ -3479,13 +3479,13 @@
             "modified_appearance_id": 180782,
             "media": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/media/item/193650?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/media/item/193650?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 193650
             },
             "item_class": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Armor",
@@ -3505,7 +3505,7 @@
             },
             "item_subclass": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4/item-subclass/4?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4/item-subclass/4?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Plate",
@@ -3897,7 +3897,7 @@
             "transmog": {
                 "item": {
                     "key": {
-                        "href": "https://eu.api.blizzard.com/data/wow/item/143539?namespace=static-10.2.6_53703-eu"
+                        "href": "https://eu.api.blizzard.com/data/wow/item/143539?namespace=static-10.2.7_54366-eu"
                     },
                     "name": {
                         "en_US": "Hidden Belt",
@@ -3952,7 +3952,7 @@
         {
             "item": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item/200418?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item/200418?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 200418
             },
@@ -3974,7 +3974,7 @@
                     },
                     "source_item": {
                         "key": {
-                            "href": "https://eu.api.blizzard.com/data/wow/item/194016?namespace=static-10.2.6_53703-eu"
+                            "href": "https://eu.api.blizzard.com/data/wow/item/194016?namespace=static-10.2.7_54366-eu"
                         },
                         "name": {
                             "en_US": "Temporal Spellthread",
@@ -4059,13 +4059,13 @@
             "modified_appearance_id": 182862,
             "media": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/media/item/200418?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/media/item/200418?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 200418
             },
             "item_class": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Armor",
@@ -4085,7 +4085,7 @@
             },
             "item_subclass": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4/item-subclass/4?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4/item-subclass/4?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Plate",
@@ -4460,7 +4460,7 @@
                     "links": [
                         {
                             "key": {
-                                "href": "https://eu.api.blizzard.com/data/wow/playable-class/2?namespace=static-10.2.6_53703-eu"
+                                "href": "https://eu.api.blizzard.com/data/wow/playable-class/2?namespace=static-10.2.7_54366-eu"
                             },
                             "name": {
                                 "en_US": "Paladin",
@@ -4498,7 +4498,7 @@
             "set": {
                 "item_set": {
                     "key": {
-                        "href": "https://eu.api.blizzard.com/data/wow/item-set/1533?namespace=static-10.2.6_53703-eu"
+                        "href": "https://eu.api.blizzard.com/data/wow/item-set/1533?namespace=static-10.2.7_54366-eu"
                     },
                     "name": {
                         "en_US": "Virtuous Silver Cataphract",
@@ -4520,7 +4520,7 @@
                     {
                         "item": {
                             "key": {
-                                "href": "https://eu.api.blizzard.com/data/wow/item/200414?namespace=static-10.2.6_53703-eu"
+                                "href": "https://eu.api.blizzard.com/data/wow/item/200414?namespace=static-10.2.7_54366-eu"
                             },
                             "name": {
                                 "en_US": "Virtuous Silver Breastplate",
@@ -4543,7 +4543,7 @@
                     {
                         "item": {
                             "key": {
-                                "href": "https://eu.api.blizzard.com/data/wow/item/200416?namespace=static-10.2.6_53703-eu"
+                                "href": "https://eu.api.blizzard.com/data/wow/item/200416?namespace=static-10.2.7_54366-eu"
                             },
                             "name": {
                                 "en_US": "Virtuous Silver Gauntlets",
@@ -4566,7 +4566,7 @@
                     {
                         "item": {
                             "key": {
-                                "href": "https://eu.api.blizzard.com/data/wow/item/200417?namespace=static-10.2.6_53703-eu"
+                                "href": "https://eu.api.blizzard.com/data/wow/item/200417?namespace=static-10.2.7_54366-eu"
                             },
                             "name": {
                                 "en_US": "Virtuous Silver Heaume",
@@ -4589,7 +4589,7 @@
                     {
                         "item": {
                             "key": {
-                                "href": "https://eu.api.blizzard.com/data/wow/item/200418?namespace=static-10.2.6_53703-eu"
+                                "href": "https://eu.api.blizzard.com/data/wow/item/200418?namespace=static-10.2.7_54366-eu"
                             },
                             "name": {
                                 "en_US": "Virtuous Silver Cuisses",
@@ -4612,7 +4612,7 @@
                     {
                         "item": {
                             "key": {
-                                "href": "https://eu.api.blizzard.com/data/wow/item/200419?namespace=static-10.2.6_53703-eu"
+                                "href": "https://eu.api.blizzard.com/data/wow/item/200419?namespace=static-10.2.7_54366-eu"
                             },
                             "name": {
                                 "en_US": "Virtuous Silver Pauldrons",
@@ -4706,7 +4706,7 @@
             "transmog": {
                 "item": {
                     "key": {
-                        "href": "https://eu.api.blizzard.com/data/wow/item/116136?namespace=static-10.2.6_53703-eu"
+                        "href": "https://eu.api.blizzard.com/data/wow/item/116136?namespace=static-10.2.7_54366-eu"
                     },
                     "name": {
                         "en_US": "Noblewoman's Skirt",
@@ -4761,7 +4761,7 @@
         {
             "item": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item/190496?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item/190496?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 190496
             },
@@ -4849,13 +4849,13 @@
             },
             "media": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/media/item/190496?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/media/item/190496?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 190496
             },
             "item_class": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Armor",
@@ -4875,7 +4875,7 @@
             },
             "item_subclass": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4/item-subclass/4?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4/item-subclass/4?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Plate",
@@ -5267,7 +5267,7 @@
             "transmog": {
                 "item": {
                     "key": {
-                        "href": "https://eu.api.blizzard.com/data/wow/item/116134?namespace=static-10.2.6_53703-eu"
+                        "href": "https://eu.api.blizzard.com/data/wow/item/116134?namespace=static-10.2.7_54366-eu"
                     },
                     "name": {
                         "en_US": "Noble's Fancy Boots",
@@ -5382,7 +5382,7 @@
         {
             "item": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item/139283?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item/139283?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 139283
             },
@@ -5430,7 +5430,7 @@
                     },
                     "item": {
                         "key": {
-                            "href": "https://eu.api.blizzard.com/data/wow/item/192925?namespace=static-10.2.6_53703-eu"
+                            "href": "https://eu.api.blizzard.com/data/wow/item/192925?namespace=static-10.2.7_54366-eu"
                         },
                         "name": {
                             "en_US": "Radiant Alexstraszite",
@@ -5464,7 +5464,7 @@
                     },
                     "media": {
                         "key": {
-                            "href": "https://eu.api.blizzard.com/data/wow/media/item/192925?namespace=static-10.2.6_53703-eu"
+                            "href": "https://eu.api.blizzard.com/data/wow/media/item/192925?namespace=static-10.2.7_54366-eu"
                         },
                         "id": 192925
                     }
@@ -5534,13 +5534,13 @@
             "modified_appearance_id": 80583,
             "media": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/media/item/139283?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/media/item/139283?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 139283
             },
             "item_class": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Armor",
@@ -5560,7 +5560,7 @@
             },
             "item_subclass": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4/item-subclass/4?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4/item-subclass/4?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Plate",
@@ -5995,7 +5995,7 @@
             "transmog": {
                 "item": {
                     "key": {
-                        "href": "https://eu.api.blizzard.com/data/wow/item/168665?namespace=static-10.2.6_53703-eu"
+                        "href": "https://eu.api.blizzard.com/data/wow/item/168665?namespace=static-10.2.7_54366-eu"
                     },
                     "name": {
                         "en_US": "Hidden Bracers",
@@ -6050,7 +6050,7 @@
         {
             "item": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item/200416?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item/200416?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 200416
             },
@@ -6115,13 +6115,13 @@
             "modified_appearance_id": 182854,
             "media": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/media/item/200416?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/media/item/200416?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 200416
             },
             "item_class": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Armor",
@@ -6141,7 +6141,7 @@
             },
             "item_subclass": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4/item-subclass/4?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4/item-subclass/4?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Plate",
@@ -6516,7 +6516,7 @@
                     "links": [
                         {
                             "key": {
-                                "href": "https://eu.api.blizzard.com/data/wow/playable-class/2?namespace=static-10.2.6_53703-eu"
+                                "href": "https://eu.api.blizzard.com/data/wow/playable-class/2?namespace=static-10.2.7_54366-eu"
                             },
                             "name": {
                                 "en_US": "Paladin",
@@ -6554,7 +6554,7 @@
             "set": {
                 "item_set": {
                     "key": {
-                        "href": "https://eu.api.blizzard.com/data/wow/item-set/1533?namespace=static-10.2.6_53703-eu"
+                        "href": "https://eu.api.blizzard.com/data/wow/item-set/1533?namespace=static-10.2.7_54366-eu"
                     },
                     "name": {
                         "en_US": "Virtuous Silver Cataphract",
@@ -6576,7 +6576,7 @@
                     {
                         "item": {
                             "key": {
-                                "href": "https://eu.api.blizzard.com/data/wow/item/200414?namespace=static-10.2.6_53703-eu"
+                                "href": "https://eu.api.blizzard.com/data/wow/item/200414?namespace=static-10.2.7_54366-eu"
                             },
                             "name": {
                                 "en_US": "Virtuous Silver Breastplate",
@@ -6599,7 +6599,7 @@
                     {
                         "item": {
                             "key": {
-                                "href": "https://eu.api.blizzard.com/data/wow/item/200416?namespace=static-10.2.6_53703-eu"
+                                "href": "https://eu.api.blizzard.com/data/wow/item/200416?namespace=static-10.2.7_54366-eu"
                             },
                             "name": {
                                 "en_US": "Virtuous Silver Gauntlets",
@@ -6622,7 +6622,7 @@
                     {
                         "item": {
                             "key": {
-                                "href": "https://eu.api.blizzard.com/data/wow/item/200417?namespace=static-10.2.6_53703-eu"
+                                "href": "https://eu.api.blizzard.com/data/wow/item/200417?namespace=static-10.2.7_54366-eu"
                             },
                             "name": {
                                 "en_US": "Virtuous Silver Heaume",
@@ -6645,7 +6645,7 @@
                     {
                         "item": {
                             "key": {
-                                "href": "https://eu.api.blizzard.com/data/wow/item/200418?namespace=static-10.2.6_53703-eu"
+                                "href": "https://eu.api.blizzard.com/data/wow/item/200418?namespace=static-10.2.7_54366-eu"
                             },
                             "name": {
                                 "en_US": "Virtuous Silver Cuisses",
@@ -6668,7 +6668,7 @@
                     {
                         "item": {
                             "key": {
-                                "href": "https://eu.api.blizzard.com/data/wow/item/200419?namespace=static-10.2.6_53703-eu"
+                                "href": "https://eu.api.blizzard.com/data/wow/item/200419?namespace=static-10.2.7_54366-eu"
                             },
                             "name": {
                                 "en_US": "Virtuous Silver Pauldrons",
@@ -6762,7 +6762,7 @@
             "transmog": {
                 "item": {
                     "key": {
-                        "href": "https://eu.api.blizzard.com/data/wow/item/158329?namespace=static-10.2.6_53703-eu"
+                        "href": "https://eu.api.blizzard.com/data/wow/item/158329?namespace=static-10.2.7_54366-eu"
                     },
                     "name": {
                         "en_US": "Hidden Gloves",
@@ -6817,7 +6817,7 @@
         {
             "item": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item/192999?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item/192999?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 192999
             },
@@ -6865,7 +6865,7 @@
                     },
                     "item": {
                         "key": {
-                            "href": "https://eu.api.blizzard.com/data/wow/item/192935?namespace=static-10.2.6_53703-eu"
+                            "href": "https://eu.api.blizzard.com/data/wow/item/192935?namespace=static-10.2.7_54366-eu"
                         },
                         "name": {
                             "en_US": "Energized Malygite",
@@ -6899,7 +6899,7 @@
                     },
                     "media": {
                         "key": {
-                            "href": "https://eu.api.blizzard.com/data/wow/media/item/192935?namespace=static-10.2.6_53703-eu"
+                            "href": "https://eu.api.blizzard.com/data/wow/media/item/192935?namespace=static-10.2.7_54366-eu"
                         },
                         "id": 192935
                     }
@@ -6969,13 +6969,13 @@
             },
             "media": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/media/item/192999?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/media/item/192999?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 192999
             },
             "item_class": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Armor",
@@ -6995,7 +6995,7 @@
             },
             "item_subclass": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4/item-subclass/0?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4/item-subclass/0?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Miscellaneous",
@@ -7209,7 +7209,7 @@
                 {
                     "spell": {
                         "key": {
-                            "href": "https://eu.api.blizzard.com/data/wow/spell/371700?namespace=static-10.2.6_53703-eu"
+                            "href": "https://eu.api.blizzard.com/data/wow/spell/371700?namespace=static-10.2.7_54366-eu"
                         },
                         "name": {
                             "en_US": "Potion Absorption Inhibitor",
@@ -7325,7 +7325,7 @@
         {
             "item": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item/203460?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item/203460?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 203460
             },
@@ -7373,7 +7373,7 @@
                     },
                     "item": {
                         "key": {
-                            "href": "https://eu.api.blizzard.com/data/wow/item/204010?namespace=static-10.2.6_53703-eu"
+                            "href": "https://eu.api.blizzard.com/data/wow/item/204010?namespace=static-10.2.7_54366-eu"
                         },
                         "name": {
                             "en_US": "Deluging Water Stone",
@@ -7411,7 +7411,7 @@
                     },
                     "media": {
                         "key": {
-                            "href": "https://eu.api.blizzard.com/data/wow/media/item/204010?namespace=static-10.2.6_53703-eu"
+                            "href": "https://eu.api.blizzard.com/data/wow/media/item/204010?namespace=static-10.2.7_54366-eu"
                         },
                         "id": 204010
                     },
@@ -7443,7 +7443,7 @@
                     },
                     "item": {
                         "key": {
-                            "href": "https://eu.api.blizzard.com/data/wow/item/204013?namespace=static-10.2.6_53703-eu"
+                            "href": "https://eu.api.blizzard.com/data/wow/item/204013?namespace=static-10.2.7_54366-eu"
                         },
                         "name": {
                             "en_US": "Exuding Steam Stone",
@@ -7481,7 +7481,7 @@
                     },
                     "media": {
                         "key": {
-                            "href": "https://eu.api.blizzard.com/data/wow/media/item/204013?namespace=static-10.2.6_53703-eu"
+                            "href": "https://eu.api.blizzard.com/data/wow/media/item/204013?namespace=static-10.2.7_54366-eu"
                         },
                         "id": 204013
                     },
@@ -7513,7 +7513,7 @@
                     },
                     "item": {
                         "key": {
-                            "href": "https://eu.api.blizzard.com/data/wow/item/204020?namespace=static-10.2.6_53703-eu"
+                            "href": "https://eu.api.blizzard.com/data/wow/item/204020?namespace=static-10.2.7_54366-eu"
                         },
                         "name": {
                             "en_US": "Wild Spirit Stone",
@@ -7552,7 +7552,7 @@
                     },
                     "media": {
                         "key": {
-                            "href": "https://eu.api.blizzard.com/data/wow/media/item/204020?namespace=static-10.2.6_53703-eu"
+                            "href": "https://eu.api.blizzard.com/data/wow/media/item/204020?namespace=static-10.2.7_54366-eu"
                         },
                         "id": 204020
                     },
@@ -7620,13 +7620,13 @@
             },
             "media": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/media/item/203460?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/media/item/203460?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 203460
             },
             "item_class": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Armor",
@@ -7646,7 +7646,7 @@
             },
             "item_subclass": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4/item-subclass/0?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4/item-subclass/0?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Miscellaneous",
@@ -7872,7 +7872,7 @@
         {
             "item": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item/193004?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item/193004?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 193004
             },
@@ -7936,13 +7936,13 @@
             },
             "media": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/media/item/193004?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/media/item/193004?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 193004
             },
             "item_class": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Armor",
@@ -7962,7 +7962,7 @@
             },
             "item_subclass": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4/item-subclass/0?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4/item-subclass/0?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Miscellaneous",
@@ -8162,7 +8162,7 @@
                 {
                     "spell": {
                         "key": {
-                            "href": "https://eu.api.blizzard.com/data/wow/spell/376640?namespace=static-10.2.6_53703-eu"
+                            "href": "https://eu.api.blizzard.com/data/wow/spell/376640?namespace=static-10.2.7_54366-eu"
                         },
                         "name": {
                             "en_US": "Idol of the Spell-Weaver",
@@ -8315,7 +8315,7 @@
         {
             "item": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item/194307?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item/194307?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 194307
             },
@@ -8378,13 +8378,13 @@
             "modified_appearance_id": 0,
             "media": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/media/item/194307?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/media/item/194307?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 194307
             },
             "item_class": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Armor",
@@ -8404,7 +8404,7 @@
             },
             "item_subclass": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4/item-subclass/0?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4/item-subclass/0?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Miscellaneous",
@@ -8518,7 +8518,7 @@
                 {
                     "spell": {
                         "key": {
-                            "href": "https://eu.api.blizzard.com/data/wow/spell/377462?namespace=static-10.2.6_53703-eu"
+                            "href": "https://eu.api.blizzard.com/data/wow/spell/377462?namespace=static-10.2.7_54366-eu"
                         },
                         "name": {
                             "en_US": "Broodkeeper's Promise",
@@ -8676,7 +8676,7 @@
         {
             "item": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item/137483?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item/137483?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 137483
             },
@@ -8719,7 +8719,7 @@
                     },
                     "source_item": {
                         "key": {
-                            "href": "https://eu.api.blizzard.com/data/wow/item/41111?namespace=static-10.2.6_53703-eu"
+                            "href": "https://eu.api.blizzard.com/data/wow/item/41111?namespace=static-10.2.7_54366-eu"
                         },
                         "name": {
                             "en_US": "Flexweave Underlay",
@@ -8745,7 +8745,7 @@
                     "spell": {
                         "spell": {
                             "key": {
-                                "href": "https://eu.api.blizzard.com/data/wow/spell/55001?namespace=static-10.2.6_53703-eu"
+                                "href": "https://eu.api.blizzard.com/data/wow/spell/55001?namespace=static-10.2.7_54366-eu"
                             },
                             "name": {
                                 "en_US": "Parachute",
@@ -8843,13 +8843,13 @@
             "modified_appearance_id": 79066,
             "media": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/media/item/137483?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/media/item/137483?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 137483
             },
             "item_class": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Armor",
@@ -8869,7 +8869,7 @@
             },
             "item_subclass": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4/item-subclass/1?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4/item-subclass/1?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Cloth",
@@ -9304,7 +9304,7 @@
             "transmog": {
                 "item": {
                     "key": {
-                        "href": "https://eu.api.blizzard.com/data/wow/item/134111?namespace=static-10.2.6_53703-eu"
+                        "href": "https://eu.api.blizzard.com/data/wow/item/134111?namespace=static-10.2.7_54366-eu"
                     },
                     "name": {
                         "en_US": "Hidden Cloak",
@@ -9343,7 +9343,7 @@
         {
             "item": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item/190512?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item/190512?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 190512
             },
@@ -9433,13 +9433,13 @@
             },
             "media": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/media/item/190512?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/media/item/190512?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 190512
             },
             "item_class": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/2?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/2?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Weapon",
@@ -9459,7 +9459,7 @@
             },
             "item_subclass": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/2/item-subclass/0?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/2/item-subclass/0?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Axe",
@@ -9772,7 +9772,7 @@
                 {
                     "spell": {
                         "key": {
-                            "href": "https://eu.api.blizzard.com/data/wow/spell/371700?namespace=static-10.2.6_53703-eu"
+                            "href": "https://eu.api.blizzard.com/data/wow/spell/371700?namespace=static-10.2.7_54366-eu"
                         },
                         "name": {
                             "en_US": "Potion Absorption Inhibitor",
@@ -9906,7 +9906,7 @@
             "transmog": {
                 "item": {
                     "key": {
-                        "href": "https://eu.api.blizzard.com/data/wow/item/122389?namespace=static-10.2.6_53703-eu"
+                        "href": "https://eu.api.blizzard.com/data/wow/item/122389?namespace=static-10.2.7_54366-eu"
                     },
                     "name": {
                         "en_US": "Bloodsoaked Skullforge Reaver",
@@ -10021,7 +10021,7 @@
         {
             "item": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item/195475?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item/195475?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 195475
             },
@@ -10084,13 +10084,13 @@
             "modified_appearance_id": 183390,
             "media": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/media/item/195475?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/media/item/195475?namespace=static-10.2.7_54366-eu"
                 },
                 "id": 195475
             },
             "item_class": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Armor",
@@ -10110,7 +10110,7 @@
             },
             "item_subclass": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4/item-subclass/6?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-class/4/item-subclass/6?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Shield",
@@ -10570,7 +10570,7 @@
             "transmog": {
                 "item": {
                     "key": {
-                        "href": "https://eu.api.blizzard.com/data/wow/item/6380?namespace=static-10.2.6_53703-eu"
+                        "href": "https://eu.api.blizzard.com/data/wow/item/6380?namespace=static-10.2.7_54366-eu"
                     },
                     "name": {
                         "en_US": "Inscribed Buckler",
@@ -10649,7 +10649,7 @@
         {
             "item_set": {
                 "key": {
-                    "href": "https://eu.api.blizzard.com/data/wow/item-set/1533?namespace=static-10.2.6_53703-eu"
+                    "href": "https://eu.api.blizzard.com/data/wow/item-set/1533?namespace=static-10.2.7_54366-eu"
                 },
                 "name": {
                     "en_US": "Virtuous Silver Cataphract",
@@ -10671,7 +10671,7 @@
                 {
                     "item": {
                         "key": {
-                            "href": "https://eu.api.blizzard.com/data/wow/item/200414?namespace=static-10.2.6_53703-eu"
+                            "href": "https://eu.api.blizzard.com/data/wow/item/200414?namespace=static-10.2.7_54366-eu"
                         },
                         "name": {
                             "en_US": "Virtuous Silver Breastplate",
@@ -10694,7 +10694,7 @@
                 {
                     "item": {
                         "key": {
-                            "href": "https://eu.api.blizzard.com/data/wow/item/200416?namespace=static-10.2.6_53703-eu"
+                            "href": "https://eu.api.blizzard.com/data/wow/item/200416?namespace=static-10.2.7_54366-eu"
                         },
                         "name": {
                             "en_US": "Virtuous Silver Gauntlets",
@@ -10717,7 +10717,7 @@
                 {
                     "item": {
                         "key": {
-                            "href": "https://eu.api.blizzard.com/data/wow/item/200417?namespace=static-10.2.6_53703-eu"
+                            "href": "https://eu.api.blizzard.com/data/wow/item/200417?namespace=static-10.2.7_54366-eu"
                         },
                         "name": {
                             "en_US": "Virtuous Silver Heaume",
@@ -10740,7 +10740,7 @@
                 {
                     "item": {
                         "key": {
-                            "href": "https://eu.api.blizzard.com/data/wow/item/200418?namespace=static-10.2.6_53703-eu"
+                            "href": "https://eu.api.blizzard.com/data/wow/item/200418?namespace=static-10.2.7_54366-eu"
                         },
                         "name": {
                             "en_US": "Virtuous Silver Cuisses",
@@ -10763,7 +10763,7 @@
                 {
                     "item": {
                         "key": {
-                            "href": "https://eu.api.blizzard.com/data/wow/item/200419?namespace=static-10.2.6_53703-eu"
+                            "href": "https://eu.api.blizzard.com/data/wow/item/200419?namespace=static-10.2.7_54366-eu"
                         },
                         "name": {
                             "en_US": "Virtuous Silver Pauldrons",

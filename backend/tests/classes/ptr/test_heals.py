@@ -246,65 +246,91 @@ def test_holy_shock_tyrs_deliverance():
         
         assert expected_heal_amount - 200 <= round(heal_amount / 10) * 10 <= expected_heal_amount + 200, "Holy Shock (Tyr's Deliverance, no crit) unexpected value"
         
-# def test_holy_shock_crit_chance():
-#     # no talents
-#     iterations = 10000
-#     crits = 0
+def test_holy_shock_tww_season_1_2pc():   
+    # tww season 1 2pc, no crit
+    for i in range(100):
+        paladin = initialise_paladin()
+        targets, glimmer_targets = set_up_paladin(paladin)
+        
+        reset_talents(paladin)
+        update_talents(paladin, {}, {})
+        
+        holy_shock = paladin.abilities["Holy Shock"]
+        paladin.set_bonuses["tww_season_1"] = 2
+        
+        paladin.crit = -100
+        
+        target = [targets[0]]
+        _, _, heal_amount, _, _ = holy_shock.cast_healing_spell(paladin, target, 0, True, glimmer_targets)
+        
+        expected_heal_amount = round(17980 * 1.1 / 10) * 10
+        
+        if i == 0:
+            print(f"Holy Shock (tww season 1 2pc, no crit)")
+            print(f"Expected Holy Shock: {expected_heal_amount}")
+            print(f"Observed Holy Shock: {heal_amount}")
+        
+        assert round(heal_amount / 10) * 10 == expected_heal_amount, "Holy Shock (tww season 1 2pc, no crit) unexpected value"
+        
+def test_holy_shock_crit_chance():
+    # no talents
+    iterations = 10000
+    crits = 0
     
-#     for i in range(iterations):
-#         paladin = initialise_paladin()
-#         targets, glimmer_targets = set_up_paladin(paladin)
+    for i in range(iterations):
+        paladin = initialise_paladin()
+        targets, glimmer_targets = set_up_paladin(paladin)
         
-#         reset_talents(paladin)
-#         update_talents(paladin, {}, {})
+        reset_talents(paladin)
+        update_talents(paladin, {}, {})
         
-#         holy_shock = paladin.abilities["Holy Shock"]
+        holy_shock = paladin.abilities["Holy Shock"]
         
-#         target = [targets[0]]
-#         _, heal_crit, _, _, _ = holy_shock.cast_healing_spell(paladin, target, 0, True, glimmer_targets)
-#         if heal_crit:
-#             crits += 1
+        target = [targets[0]]
+        _, heal_crit, _, _, _ = holy_shock.cast_healing_spell(paladin, target, 0, True, glimmer_targets)
+        if heal_crit:
+            crits += 1
             
-#     holy_shock_bonus_crit = 0.1
+    holy_shock_bonus_crit = 0.1
             
-#     expected_crit_rate = paladin.crit / 100 + holy_shock_bonus_crit
-#     observed_crit_rate = crits / iterations
+    expected_crit_rate = paladin.crit / 100 + holy_shock_bonus_crit
+    observed_crit_rate = crits / iterations
     
-#     print(f"Expected crit rate: {expected_crit_rate}")
-#     print(f"Observed crit rate: {observed_crit_rate}")
+    print(f"Expected crit rate: {expected_crit_rate}")
+    print(f"Observed crit rate: {observed_crit_rate}")
     
-#     tolerance = 0.02
-#     assert abs(observed_crit_rate - expected_crit_rate) <= tolerance, "Observed crit rate does not match expected crit rate (no talents)"
+    tolerance = 0.02
+    assert abs(observed_crit_rate - expected_crit_rate) <= tolerance, "Observed crit rate does not match expected crit rate (no talents)"
     
-#     # divine glimpse
-#     iterations = 10000
-#     crits = 0
+    # divine glimpse
+    iterations = 10000
+    crits = 0
     
-#     for i in range(iterations):
-#         paladin = initialise_paladin()
-#         targets, glimmer_targets = set_up_paladin(paladin)
+    for i in range(iterations):
+        paladin = initialise_paladin()
+        targets, glimmer_targets = set_up_paladin(paladin)
         
-#         reset_talents(paladin)
-#         update_talents(paladin, {}, {"Divine Glimpse": 1})
+        reset_talents(paladin)
+        update_talents(paladin, {}, {"Divine Glimpse": 1})
         
-#         holy_shock = paladin.abilities["Holy Shock"]
+        holy_shock = paladin.abilities["Holy Shock"]
         
-#         target = [targets[0]]
-#         _, heal_crit, _, _, _ = holy_shock.cast_healing_spell(paladin, target, 0, True, glimmer_targets)
-#         if heal_crit:
-#             crits += 1
+        target = [targets[0]]
+        _, heal_crit, _, _, _ = holy_shock.cast_healing_spell(paladin, target, 0, True, glimmer_targets)
+        if heal_crit:
+            crits += 1
             
-#     holy_shock_bonus_crit = 0.1
-#     divine_glimpse_bonus_crit = 0.08
+    holy_shock_bonus_crit = 0.1
+    divine_glimpse_bonus_crit = 0.08
             
-#     expected_crit_rate = paladin.crit / 100 + holy_shock_bonus_crit + divine_glimpse_bonus_crit
-#     observed_crit_rate = crits / iterations
+    expected_crit_rate = paladin.crit / 100 + holy_shock_bonus_crit + divine_glimpse_bonus_crit
+    observed_crit_rate = crits / iterations
     
-#     print(f"Expected crit rate: {expected_crit_rate}")
-#     print(f"Observed crit rate: {observed_crit_rate}")
+    print(f"Expected crit rate: {expected_crit_rate}")
+    print(f"Observed crit rate: {observed_crit_rate}")
     
-#     tolerance = 0.02
-#     assert abs(observed_crit_rate - expected_crit_rate) <= tolerance, "Observed crit rate does not match expected crit rate (divine glimpse)"
+    tolerance = 0.02
+    assert abs(observed_crit_rate - expected_crit_rate) <= tolerance, "Observed crit rate does not match expected crit rate (divine glimpse)"
     
 def test_divine_resonance_holy_shock():
     # no talents, no crit

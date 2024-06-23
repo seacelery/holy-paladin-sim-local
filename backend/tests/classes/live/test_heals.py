@@ -7,7 +7,7 @@ import math
 from app.classes.paladin import Paladin
 from app.classes.target import Target, EnemyTarget
 from app.classes.spells_auras import TyrsDeliveranceHeal
-from app.classes.auras_buffs import DivinePurpose, BlessingOfDawn, GlimmerOfLightBuff, AvengingWrathBuff, BlessingOfSpring, AvengingWrathAwakening, AvengingCrusaderBuff, UntemperedDedication, MaraadsDyingBreath
+from app.classes.auras_buffs import DivinePurpose, BlessingOfDawn, GlimmerOfLightBuff, AvengingWrathBuff, BlessingOfSpring, AvengingWrathAwakening, AvengingCrusaderBuff, UntemperedDedication, MaraadsDyingBreath, PureLight
 from app.classes.spells_healing import DivineResonanceHolyShock, RisingSunlightHolyShock, DivineTollHolyShock
 from app.classes.spells_passives import TouchOfLight
 
@@ -268,7 +268,7 @@ def test_holy_shock_tyrs_deliverance():
             print(f"Observed Holy Shock: {heal_amount}")
         
         assert round(heal_amount / 10) * 10 == expected_heal_amount, "Holy Shock (Tyr's Deliverance, no crit) unexpected value"
-        
+  
 def test_holy_shock_crit_chance():
     # no talents
     iterations = 10000
