@@ -57,7 +57,7 @@ def set_up_paladin(paladin):
     glimmer_targets = [glimmer_target for glimmer_target in paladin.potential_healing_targets if "Glimmer of Light" in glimmer_target.target_active_buffs]
     
     paladin.mastery_effectiveness = 1
-    paladin.set_bonuses = {"season_1": 0, "season_2": 0, "season_3": 0}
+    paladin.set_bonuses = {"season_1": 0, "season_2": 0, "season_3": 0, "dragonflight_season_2": 0}
     
     return targets, glimmer_targets
 
@@ -100,7 +100,7 @@ def test_holy_shock():
             
         assert round(heal_amount / 10) * 10 == expected_heal_amount, "Holy Shock (no talents, no crit) unexpected value"
         
-def test_holy_shock_season_2_tier_2pc():
+def test_holy_shock_dragonflight_season_2_tier_2pc():
     # no talents, no crit, season 2 tier 2pc
     for i in range(100):
         paladin = initialise_paladin()
@@ -112,7 +112,7 @@ def test_holy_shock_season_2_tier_2pc():
         holy_shock = paladin.abilities["Holy Shock"]
         
         set_crit_to_max(paladin)
-        paladin.set_bonuses["season_2"] = 2
+        paladin.set_bonuses["dragonflight_season_2"] = 2
         
         target = [targets[0]]
         _, _, heal_amount, _, _ = holy_shock.cast_healing_spell(paladin, target, 0, True, glimmer_targets)

@@ -37,7 +37,6 @@ class Simulation:
             
         self.stat_scaling = stat_scaling
         self.overhealing = overhealing
-        print(self.overhealing)
         
         # make tick rate smaller for better hot accuracy
         self.tick_rate = float(tick_rate)

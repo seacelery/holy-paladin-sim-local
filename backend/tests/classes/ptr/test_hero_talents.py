@@ -51,7 +51,7 @@ def set_up_paladin(paladin):
     glimmer_targets = [glimmer_target for glimmer_target in paladin.potential_healing_targets if "Glimmer of Light" in glimmer_target.target_active_buffs]
     
     paladin.mastery_effectiveness = 1
-    paladin.set_bonuses = {"season_1": 0, "season_2": 0, "season_3": 0}
+    paladin.set_bonuses = {"season_1": 0, "season_2": 0, "season_3": 0, "dragonflight_season_2": 0}
     
     return targets, glimmer_targets
 
