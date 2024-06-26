@@ -21,6 +21,8 @@ path_to_stats_data = os.path.join(os.path.dirname(__file__), "character_data", "
 path_to_talent_data = os.path.join(os.path.dirname(__file__), "character_data", "talent_data.json")
 path_to_base_class_talents_data = os.path.join(os.path.dirname(__file__), "character_data", "base_class_talents")
 path_to_base_spec_talents_data = os.path.join(os.path.dirname(__file__), "character_data", "base_spec_talents")
+path_to_base_herald_of_the_sun_talents_data = os.path.join(os.path.dirname(__file__), "character_data", "base_herald_of_the_sun_talents")
+path_to_base_lightsmith_talents_data = os.path.join(os.path.dirname(__file__), "character_data", "base_lightsmith_talents")
 
 path_to_equipment_data = os.path.join(os.path.dirname(__file__), "character_data", "equipment_data.json")
 path_to_updated_equipment_data = os.path.join(os.path.dirname(__file__), "character_data", "updated_equipment_data")
@@ -31,6 +33,8 @@ stats_data = load_data_from_file(path_to_stats_data)
 talent_data = load_data_from_file(path_to_talent_data)
 base_class_talents_data = load_data_from_file(path_to_base_class_talents_data)
 base_spec_talents_data = load_data_from_file(path_to_base_spec_talents_data)
+base_herald_of_the_sun_talents_data = load_data_from_file(path_to_base_herald_of_the_sun_talents_data)
+base_lightsmith_talents_data = load_data_from_file(path_to_base_lightsmith_talents_data)
 
 equipment_data = load_data_from_file(path_to_equipment_data)
 updated_equipment_data = load_data_from_file(path_to_updated_equipment_data)
@@ -60,11 +64,11 @@ def set_up_paladin(paladin):
     return targets, glimmer_targets
 
 def reset_talents(paladin):
-    paladin.update_character(class_talents=base_class_talents_data, spec_talents=base_spec_talents_data)
+    paladin.update_character(class_talents=base_class_talents_data, spec_talents=base_spec_talents_data, herald_of_the_sun_talents=base_herald_of_the_sun_talents_data, lightsmith_talents=base_lightsmith_talents_data)
     paladin.update_equipment(updated_equipment_data)
     
-def update_talents(paladin, class_talents={}, spec_talents={}):
-    paladin.update_character(class_talents=class_talents, spec_talents=spec_talents)
+def update_talents(paladin, class_talents={}, spec_talents={}, herald_of_the_sun_talents={}, lightsmith_talents={}):
+    paladin.update_character(class_talents=class_talents, spec_talents=spec_talents, herald_of_the_sun_talents=herald_of_the_sun_talents, lightsmith_talents=lightsmith_talents)
     paladin.update_equipment(updated_equipment_data)
 
 def set_crit_to_max(paladin):
@@ -845,6 +849,66 @@ def test_word_of_glory():
 
     assert expected_heal_amount - 200 <= round(heal_amount / 10) * 10 <= expected_heal_amount + 200, "Word of Glory (no talents, no crit) unexpected value"
     
+def test_word_of_glory_crit_chance():
+    # no talents
+    iterations = 10000
+    crits = 0
+    
+    for i in range(iterations):
+        paladin = initialise_paladin()
+        targets, glimmer_targets = set_up_paladin(paladin)
+        
+        reset_talents(paladin)
+        update_talents(paladin, {}, {})
+        
+        word_of_glory = paladin.abilities["Word of Glory"]
+        
+        target = [targets[0]]
+        paladin.holy_power = 3
+        _, heal_crit, _, _, _, _ = word_of_glory.cast_healing_spell(paladin, target, 0, True)
+        if heal_crit:
+            crits += 1
+            
+    expected_crit_rate = paladin.crit / 100
+    observed_crit_rate = crits / iterations
+    
+    print(f"Expected crit rate: {expected_crit_rate}")
+    print(f"Observed crit rate: {observed_crit_rate}")
+    
+    tolerance = 0.02
+    assert abs(observed_crit_rate - expected_crit_rate) <= tolerance, "Observed crit rate does not match expected crit rate (no talents)"
+    
+    # extrication
+    iterations = 10000
+    crits = 0
+    
+    for i in range(iterations):
+        paladin = initialise_paladin()
+        targets, glimmer_targets = set_up_paladin(paladin)
+        
+        reset_talents(paladin)
+        update_talents(paladin, {}, {"Extrication": 1})
+        
+        word_of_glory = paladin.abilities["Word of Glory"]
+        
+        target = [targets[0]]
+        paladin.holy_power = 3
+        _, heal_crit, _, _, _, _ = word_of_glory.cast_healing_spell(paladin, target, 0, True)
+        if heal_crit:
+            crits += 1
+            
+    bonus_crit = 0.09
+    paladin.average_raid_health_percentage = 0.7
+            
+    expected_crit_rate = paladin.crit / 100 + bonus_crit
+    observed_crit_rate = crits / iterations
+    
+    print(f"Expected crit rate: {expected_crit_rate}")
+    print(f"Observed crit rate: {observed_crit_rate}")
+    
+    tolerance = 0.02
+    assert abs(observed_crit_rate - expected_crit_rate) <= tolerance, "Observed crit rate does not match expected crit rate (extrication)"
+    
 def test_word_of_glory_divine_purpose():
     # divine purpose, no crit
     paladin = initialise_paladin()
@@ -999,6 +1063,66 @@ def test_light_of_dawn():
     print(f"Observed Light of Dawn: {heal_amount}")
 
     assert round(heal_amount / 10) * 10 == expected_heal_amount, "Light of Dawn (no talents, no crit) unexpected value"
+    
+def test_light_of_dawn_crit_chance():
+    # no talents
+    iterations = 10000
+    crits = 0
+    
+    for i in range(iterations):
+        paladin = initialise_paladin()
+        targets, glimmer_targets = set_up_paladin(paladin)
+        
+        reset_talents(paladin)
+        update_talents(paladin, {}, {"Light of Dawn": 1})
+        
+        light_of_dawn = paladin.abilities["Light of Dawn"]
+        
+        target = [targets[0]]
+        paladin.holy_power = 3
+        _, heal_crit, heal_amount, _ = light_of_dawn.cast_healing_spell(paladin, target, 0, True)
+        if heal_crit:
+            crits += 1
+            
+    expected_crit_rate = paladin.crit / 100
+    observed_crit_rate = crits / iterations
+    
+    print(f"Expected crit rate: {expected_crit_rate}")
+    print(f"Observed crit rate: {observed_crit_rate}")
+    
+    tolerance = 0.02
+    assert abs(observed_crit_rate - expected_crit_rate) <= tolerance, "Observed crit rate does not match expected crit rate (no talents)"
+    
+    # extrication
+    iterations = 10000
+    crits = 0
+    
+    for i in range(iterations):
+        paladin = initialise_paladin()
+        targets, glimmer_targets = set_up_paladin(paladin)
+        
+        reset_talents(paladin)
+        update_talents(paladin, {}, {"Extrication": 1, "Light of Dawn": 1}, {"Luminosity": 1})
+        
+        light_of_dawn = paladin.abilities["Light of Dawn"]
+        
+        target = [targets[0]]
+        paladin.holy_power = 3
+        _, heal_crit, heal_amount, _ = light_of_dawn.cast_healing_spell(paladin, target, 0, True)
+        if heal_crit:
+            crits += 1
+            
+    bonus_crit = 0.19
+    paladin.average_raid_health_percentage = 0.7
+            
+    expected_crit_rate = paladin.crit / 100 + bonus_crit
+    observed_crit_rate = crits / iterations
+    
+    print(f"Expected crit rate: {expected_crit_rate}")
+    print(f"Observed crit rate: {observed_crit_rate}")
+    
+    tolerance = 0.02
+    assert abs(observed_crit_rate - expected_crit_rate) <= tolerance, "Observed crit rate does not match expected crit rate (extrication)"
     
 def test_light_of_dawn_divine_purpose():
     # no talents, no crit

@@ -1,14 +1,28 @@
-holy shock healing
-dawnlight healing
-dawnlight radiate double dipping
-awakening dawnlights added
-tyrs deliverance healing
-divine favor spell removed on live
-divine favor buff changes
-prism barrier apply divine favor
-light of dawn second sunrise changes initial cast on dp and awakening
-spec talents positioning
-rite of adjuration
-sacred weapon multi
-daybreak mana
-item data
+spells healing
+divine guidance healing
+ef heal & mana
+fol mana cost
+all 4 hs healing & mana
+overflowing light (include overheal idk)
+lod mana heal
+suns avatar heal
+wog heal mana
+extrication wog ef lod
+liberation proc on spenders
+
+spells damage
+hammer and anvil heal
+liberation spent on judge
+
+simulation
+lingering radiance 12 -> 10
+
+auras buffs
+ef hot heal
+liberation buff
+
+spells passives
+sacred weapon heal
+
+base talents
+talent icons
