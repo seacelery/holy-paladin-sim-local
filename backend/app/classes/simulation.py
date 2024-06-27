@@ -899,8 +899,9 @@ class Simulation:
                         
                     ability_breakdown[spell]["overhealing"] = total_overheal_percent 
             
-            for source_spell in ability_breakdown["Beacon of Light"]["source_spells"]:
-                ability_breakdown["Beacon of Light"]["source_spells"][source_spell]["healing"] *= 1 - self.overhealing.get("Beacon of Light", 0)
+            if "Beacon of Light" in ability_breakdown:
+                for source_spell in ability_breakdown["Beacon of Light"]["source_spells"]:
+                    ability_breakdown["Beacon of Light"]["source_spells"][source_spell]["healing"] *= 1 - self.overhealing.get("Beacon of Light", 0)
                                                     
         # PROCESS ABILITY HEALING
         def add_sub_spell_healing(primary_spell_data):
@@ -1402,11 +1403,17 @@ class Simulation:
                     for target, target_data in data["targets"].items():
                         target_data["crit_percent"] = round((target_data["crits"] / target_data["casts"]) * 100, 1) if target_data["casts"] > 0 else 0
                 
-                # assign sub-spell data to primary spell
-                for spell, data in ability_breakdown.items():
+                sub_spell_exceptions = []
+                
+                for spell, data in list(ability_breakdown.items()):
                     if spell in sub_spell_map:
                         primary_spell = sub_spell_map[spell]
-                        ability_breakdown[primary_spell]["sub_spells"][spell] = data
+                        
+                        if primary_spell in ability_breakdown:
+                            ability_breakdown[primary_spell]["sub_spells"][spell] = data
+                        else:
+                            ability_breakdown[spell] = data
+                            sub_spell_exceptions.append(spell)
                 
                 for primary_spell, primary_data in ability_breakdown.items():
                     if primary_spell in sub_spell_map.values():
@@ -1453,7 +1460,7 @@ class Simulation:
                 
                 # remove the primary spell data for sub-spells        
                 for spell in remove_primary_spell_data:
-                    if spell in ability_breakdown:
+                    if spell in ability_breakdown and spell not in sub_spell_exceptions:
                         del ability_breakdown[spell]
                             
                 # combine beacon glimmer sources into one spell

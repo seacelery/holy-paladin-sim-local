@@ -35,6 +35,7 @@ const toggleTalentOptions = (talentName, talentData) => {
 };
 
 const updateTalentsFromImportedData = (importedTalents) => {
+    console.log(importedTalents)
     let importedClassTalents = importedTalents.class_talents;
     let importedSpecTalents = importedTalents.spec_talents;
 
