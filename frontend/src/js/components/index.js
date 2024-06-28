@@ -516,6 +516,8 @@ const runSimulation = async () => {
     const lightOfDawnTargets = document.getElementById("light-of-dawn-option").value;
     const lightsHammerTargets = document.getElementById("lights-hammer-option").value;
     const resplendentLightTargets = document.getElementById("resplendent-light-option").value;
+    const dawnlightTargets = document.getElementById("dawnlight-option").value;
+    const sunsAvatarTargets = document.getElementById("suns-avatar-option").value;
 
     let seasons = {
         "Blessing of Summer": true,
@@ -560,7 +562,7 @@ const runSimulation = async () => {
 
     simulateButton.style.boxShadow = "";  
 
-    return fetch(`http://127.0.0.1:5000/run_simulation?encounter_length=${encounterLength}&iterations=${iterations}&time_warp_time=${timeWarpTime}&priority_list=${priorityListJson}&custom_equipment=${customEquipment}&tick_rate=${tickRate}&raid_health=${raidHealth}&mastery_effectiveness=${masteryEffectiveness}&light_of_dawn_targets=${lightOfDawnTargets}&lights_hammer_targets=${lightsHammerTargets}&resplendent_light_targets=${resplendentLightTargets}&stat_scaling=${statScaling}&seasons=${seasons}&overhealing=${overhealingJson}`, {
+    return fetch(`http://127.0.0.1:5000/run_simulation?encounter_length=${encounterLength}&iterations=${iterations}&time_warp_time=${timeWarpTime}&priority_list=${priorityListJson}&custom_equipment=${customEquipment}&tick_rate=${tickRate}&raid_health=${raidHealth}&mastery_effectiveness=${masteryEffectiveness}&light_of_dawn_targets=${lightOfDawnTargets}&lights_hammer_targets=${lightsHammerTargets}&resplendent_light_targets=${resplendentLightTargets}&dawnlight_targets=${dawnlightTargets}&suns_avatar_targets=${sunsAvatarTargets}&stat_scaling=${statScaling}&seasons=${seasons}&overhealing=${overhealingJson}`, {
         credentials: "include",
         signal: signal
     })
@@ -1269,7 +1271,7 @@ addTooltipFunctionality(tickRateInfoCircle, tickRateTooltip, null, `<span>Reduci
 
 const raidHealthInfoCircle = document.getElementById("raid-health-info-circle");
 const raidHealthTooltip = createTooltip("raid-health-tooltip", "raid-health-tooltip");
-addTooltipFunctionality(raidHealthInfoCircle, raidHealthTooltip, null, `<span>This only affects Reclamation.</span>`);
+addTooltipFunctionality(raidHealthInfoCircle, raidHealthTooltip, null, `<span>This affects Extrication and Reclamation.</span>`);
 
 createTalentGrid();
 createOptionsSliders();
