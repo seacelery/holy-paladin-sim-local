@@ -3,7 +3,7 @@
 
 import { initialiseSocket } from "./config/socket-config.js";
 import { initialiseTheme } from "./config/theme-config.js";
-import { initialiseVersion } from "./config/version-config.js";
+import { futurePatchSelected, initialiseVersion } from "./config/version-config.js";
 import { createAbilityBreakdown } from "./ability-breakdown.js";
 import { createBuffsBreakdown } from "./buffs-breakdown.js";
 import { createResourcesBreakdown } from "./resources-breakdown.js";
@@ -1220,25 +1220,46 @@ presetBuffsButton.addEventListener("click", () => {
         const unselectedImages = document.querySelectorAll(`.${type}-image`);
         unselectedImages.forEach(image => {
             const imageData = image.getAttribute(`data-${type}`);
-            if (["Iced Phial of Corrupting Rage", "Grand Banquet of the Kalu'ak", "Hissing Rune",
-                "Draconic Augment Rune", "Arcane Intellect", "Mark of the Wild", "Symbol of Hope",
-                "Retribution Aura", "Source of Magic"].includes(imageData)) {
-                    image.classList.toggle(`${type}-selected`); 
-                    image.classList.toggle(`${type}-unselected`);
-            };
-        })
+            if (futurePatchSelected) {
+                if (["Flask of Saving Graces", "Grand Banquet of the Kalu'ak", "Algari Mana Oil",
+                    "Crystallized Augment Rune", "Arcane Intellect", "Mark of the Wild", "Symbol of Hope",
+                    "Retribution Aura", "Source of Magic"].includes(imageData)) {
+                        image.classList.toggle(`${type}-selected`); 
+                        image.classList.toggle(`${type}-unselected`);
+                };
+            } else {
+                if (["Iced Phial of Corrupting Rage", "Grand Banquet of the Kalu'ak", "Hissing Rune",
+                    "Draconic Augment Rune", "Arcane Intellect", "Mark of the Wild", "Symbol of Hope",
+                    "Retribution Aura", "Source of Magic"].includes(imageData)) {
+                        image.classList.toggle(`${type}-selected`); 
+                        image.classList.toggle(`${type}-unselected`);
+                };
+            };       
+        });
     });
 
-    currentConsumables = {
-        flask: ["Iced Phial of Corrupting Rage"],
-        food: ["Grand Banquet of the Kalu'ak"],
-        weapon_imbue: ["Hissing Rune"],
-        augment_rune: ["Draconic Augment Rune"],
-        raid_buff: ["Arcane Intellect", "Mark of the Wild", "Symbol of Hope", "Retribution Aura"],
-        external_buff: {"Source of Magic": ["0"]},
-        potion: {}
+    if (futurePatchSelected) {
+        currentConsumables = {
+            flask: ["Flask of Saving Graces"],
+            food: ["Grand Banquet of the Kalu'ak"],
+            weapon_imbue: ["Algari Mana Oil"],
+            augment_rune: ["Crystallized Augment Rune"],
+            raid_buff: ["Arcane Intellect", "Mark of the Wild", "Symbol of Hope", "Retribution Aura"],
+            external_buff: {"Source of Magic": ["0"]},
+            potion: {}
+        };
+    } else {
+        currentConsumables = {
+            flask: ["Iced Phial of Corrupting Rage"],
+            food: ["Grand Banquet of the Kalu'ak"],
+            weapon_imbue: ["Hissing Rune"],
+            augment_rune: ["Draconic Augment Rune"],
+            raid_buff: ["Arcane Intellect", "Mark of the Wild", "Symbol of Hope", "Retribution Aura"],
+            external_buff: {"Source of Magic": ["0"]},
+            potion: {}
+        };
     };
-
+    
     updateCharacter({
         consumables: currentConsumables
     });
