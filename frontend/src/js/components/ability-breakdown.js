@@ -104,7 +104,8 @@ const createAbilityBreakdown = (simulationData, containerCount) => {
     // "Blessing of Summer", "Blessing of Autumn", "Blessing of Winter", "Blessing of Spring", 
     const excludedSpells = [
         "Reclamation (Holy Shock)", "Reclamation (Crusader Strike)", "Divine Revelations (Holy Light)", "Divine Revelations (Judgment)", 
-        "Aerated Mana Potion", "Tirion's Devotion", "Source of Magic", "Mana Spring Totem", "Symbol of Hope", "Mana Tide Totem"
+        "Aerated Mana Potion", "Tirion's Devotion", "Source of Magic", "Mana Spring Totem", "Symbol of Hope", "Mana Tide Totem",
+        "Algari Mana Potion"
     ];
     // displays only casts and resource gains
     const excludedSpellsOnlyResourcesAndCasts = [
@@ -124,7 +125,7 @@ const createAbilityBreakdown = (simulationData, containerCount) => {
         "Broodkeeper's Promise", "Sun Sear", "Sacred Weapon 1", "Sacred Weapon 2", "Authority of Fiery Resolve", "Rite of Adjuration",
         "Avenging Crusader (Judgment)", "Avenging Crusader (Crusader Strike)", "Sun's Avatar", "Divine Guidance", "Hammer and Anvil", "Scrapsinger's Symphony",
         "Siphoning Phylactery Shard", "Creeping Coagulum ", "Gruesome Syringe", "Truth Prevails", "Saved by the Light (Word of Glory)", 
-        "Saved by the Light (Eternal Flame)", "Saved by the Light (Light of Dawn)", "Radiant Aura", "Sacred Word"
+        "Saved by the Light (Eternal Flame)", "Saved by the Light (Light of Dawn)", "Radiant Aura", "Sacred Word", "Fading Light"
     ];
     // displays casts with average as healing divided by hits
     const excludedSpellsCastsAverageHits = [
@@ -134,7 +135,7 @@ const createAbilityBreakdown = (simulationData, containerCount) => {
         "Beacon of Light", "Overflowing Light", "Resplendent Light", "Crusader's Reprieve", "Crusader Strike", "Judgment", "Daybreak", 
         "Divine Toll", "Smoldering Seedling", "Blossom of Amirdrassil Absorb", "Blossom of Amirdrassil", "Lay on Hands", "Leech", "Veneration",
         "Light of the Martyr ", "Saved by the Light", "Dawnlight", "Broodkeeper's Promise", "Sacred Weapon", "Holy Bulwark",
-        "Avenging Crusader", "Siphoning Phylactery Shard"
+        "Avenging Crusader", "Siphoning Phylactery Shard", "Fading Light"
     ];
     const excludedSpellsAverage = [
         "Dawnlight"
