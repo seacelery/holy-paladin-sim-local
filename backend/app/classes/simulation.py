@@ -387,6 +387,8 @@ class Simulation:
                         
         if "Ovinax's Mercurial Egg" in self.paladin.trinkets and "Ovinax's Mercurial Egg Paused" not in self.paladin.active_auras:
             option = self.paladin.trinkets.get("Ovinax's Mercurial Egg", {}).get("option")
+            if option is None:
+                option = "Low Movement"
             ovinaxs_mercurial_egg = self.paladin.active_auras["Ovinax's Mercurial Egg"]
             ovinaxs_mercurial_egg.timer += self.tick_rate
             
@@ -432,8 +434,7 @@ class Simulation:
             if random_num < probabilities[option]:
                 ovinaxs_mercurial_egg.moving = True
             else:
-                ovinaxs_mercurial_egg.moving = False
-                                 
+                ovinaxs_mercurial_egg.moving = False                                
                 
     def increment_effects_with_additional_triggers(self):
         if "Divine Resonance" in self.paladin.active_auras:
