@@ -5,7 +5,7 @@ from flask_socketio import emit
 
 from .target import EnemyTarget, SmolderingSeedling
 from .trinkets import Trinket
-from .auras_buffs import HolyReverberation, HoT, BeaconOfLightBuff, AvengingWrathAwakening, AvengingCrusaderAwakening, TimeWarp, BestFriendsWithAerwynEmpowered, BestFriendsWithPipEmpowered, BestFriendsWithUrctosEmpowered, CorruptingRage, RetributionAuraTrigger, LightOfTheMartyrBuff, BestowLight, EternalFlameBuff, InfusionOfLight, SunsAvatarActive, DeliberateIncubation, RecklessIncubation, SavingGraces
+from .auras_buffs import HolyReverberation, HoT, BeaconOfLightBuff, AvengingWrathAwakening, AvengingCrusaderAwakening, TimeWarp, BestFriendsWithAerwynEmpowered, BestFriendsWithPipEmpowered, BestFriendsWithUrctosEmpowered, CorruptingRage, RetributionAuraTrigger, LightOfTheMartyrBuff, BestowLight, EternalFlameBuff, InfusionOfLight, SunsAvatarActive, DeliberateIncubation, RecklessIncubation, SavingGraces, PotionBombOfPower
 from ..utils.misc_functions import append_aura_removed_event, format_time, update_self_buff_data, update_target_buff_data, update_mana_gained, handle_flat_cdr
 from .priority_list_dsl import parse_condition, condition_to_lambda
 from .simulation_state import check_cancellation, reset_simulation
@@ -14,7 +14,7 @@ pp = pprint.PrettyPrinter(width=200)
 
 class Simulation:
     
-    def __init__(self, paladin, healing_targets_list, encounter_length, iterations, time_warp_time, priority_list, custom_equipment, tick_rate, raid_health, mastery_effectiveness, light_of_dawn_targets, lights_hammer_targets, resplendent_light_targets, sureki_zealots_insignia_count, dawnlight_targets, suns_avatar_targets, seasons, stat_scaling, overhealing, access_token, test=False):
+    def __init__(self, paladin, healing_targets_list, encounter_length, iterations, time_warp_time, priority_list, custom_equipment, tick_rate, raid_health, mastery_effectiveness, light_of_dawn_targets, lights_hammer_targets, resplendent_light_targets, sureki_zealots_insignia_count, dawnlight_targets, suns_avatar_targets, potion_bomb_of_power_uptime, seasons, stat_scaling, overhealing, access_token, test=False):
 
         self.access_token = access_token
 
@@ -57,6 +57,8 @@ class Simulation:
         self.symbol_of_hope_timer = 150 if encounter_length > 210 else 30
         self.mana_spring_totem_timer = 0
         self.mana_tide_totem_timer = 150 if encounter_length > 210 else 30
+        self.potion_bomb_of_power_uptime = float(potion_bomb_of_power_uptime) / 100
+        self.potion_bomb_of_power_timer = 0
         
         self.times_direct_healed = {}
         self.previous_ability = None
@@ -492,6 +494,25 @@ class Simulation:
                     self.light_of_the_martyr_timer = 0
                     self.paladin.apply_buff_to_self(LightOfTheMartyrBuff(self.paladin, uptime_duration / light_of_the_martyr_intervals), self.elapsed_time)
                     self.bestow_light_timer = 0
+                    
+        if self.potion_bomb_of_power_uptime > 0:
+            uptime_duration = self.encounter_length * self.potion_bomb_of_power_uptime
+            downtime_duration = (self.encounter_length - uptime_duration)
+            
+            total_intervals = self.encounter_length / 30
+            uptime_intervals = total_intervals - (self.encounter_length - uptime_duration) / 30
+            interval_time = self.encounter_length / uptime_intervals
+            
+            if self.elapsed_time <= 0.1:
+                if "Potion Bomb of Power" not in self.paladin.active_auras:
+                    self.paladin.apply_buff_to_self(PotionBombOfPower(self.paladin), self.elapsed_time)
+                    
+            if "Potion Bomb of Power" not in self.paladin.active_auras:
+                self.potion_bomb_of_power_timer += self.tick_rate
+                
+                if self.potion_bomb_of_power_timer >= interval_time:
+                    self.potion_bomb_of_power_timer = 0
+                    self.paladin.apply_buff_to_self(PotionBombOfPower(self.paladin), self.elapsed_time)
                              
         # if "Retribution Aura " in self.paladin.active_auras:
         #     self.retribution_aura_timer += self.tick_rate
