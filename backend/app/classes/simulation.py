@@ -493,11 +493,11 @@ class Simulation:
                     self.paladin.apply_buff_to_self(LightOfTheMartyrBuff(self.paladin, uptime_duration / light_of_the_martyr_intervals), self.elapsed_time)
                     self.bestow_light_timer = 0
                              
-        if "Retribution Aura " in self.paladin.active_auras:
-            self.retribution_aura_timer += self.tick_rate
-            if self.retribution_aura_timer >= 45:
-                self.retribution_aura_timer = 0
-                self.paladin.apply_buff_to_self(RetributionAuraTrigger(), self.elapsed_time)
+        # if "Retribution Aura " in self.paladin.active_auras:
+        #     self.retribution_aura_timer += self.tick_rate
+        #     if self.retribution_aura_timer >= 45:
+        #         self.retribution_aura_timer = 0
+        #         self.paladin.apply_buff_to_self(RetributionAuraTrigger(), self.elapsed_time)
                 
         if "Source of Magic" in self.paladin.active_auras:
             self.source_of_magic_timer += self.tick_rate

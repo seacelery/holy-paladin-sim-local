@@ -52,7 +52,7 @@ buff_class_map = {
     "Arcane Intellect": ArcaneIntellect,
     "Mark of the Wild": MarkOfTheWild,
     "Close to Heart": CloseToHeart,
-    "Retribution Aura": RetributionAura,
+    # "Retribution Aura": RetributionAura,
     "Symbol of Hope": SymbolOfHope,
     "Mana Spring Totem": ManaSpringTotem,
     "Mana Tide Totem": ManaTideTotem,
