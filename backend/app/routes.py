@@ -165,6 +165,7 @@ def run_simulation_route():
     sureki_zealots_insignia_count = request.args.get("sureki_zealots_insignia_count")
     dawnlight_targets = request.args.get("dawnlight_targets")
     suns_avatar_targets = request.args.get("suns_avatar_targets")
+    light_of_the_martyr_uptime = request.args.get("light_of_the_martyr_uptime")
     potion_bomb_of_power_uptime = request.args.get("potion_bomb_of_power_uptime")
     stat_scaling_json = request.args.get("stat_scaling")
     seasons_json = request.args.get("seasons")
@@ -196,7 +197,7 @@ def run_simulation_route():
         consumables=modifiable_data.get("consumables")
     )
         
-    simulation = initialise_simulation(paladin, healing_targets, encounter_length, iterations, time_warp_time, priority_list, custom_equipment, tick_rate, raid_health, mastery_effectiveness, light_of_dawn_targets, lights_hammer_targets, resplendent_light_targets, sureki_zealots_insignia_count, dawnlight_targets, suns_avatar_targets, potion_bomb_of_power_uptime, seasons, stat_scaling, overhealing)
+    simulation = initialise_simulation(paladin, healing_targets, encounter_length, iterations, time_warp_time, priority_list, custom_equipment, tick_rate, raid_health, mastery_effectiveness, light_of_dawn_targets, lights_hammer_targets, resplendent_light_targets, sureki_zealots_insignia_count, dawnlight_targets, suns_avatar_targets, light_of_the_martyr_uptime, potion_bomb_of_power_uptime, seasons, stat_scaling, overhealing)
 
     # pp.pprint(paladin.class_talents)
     results = run_simulation(simulation)
