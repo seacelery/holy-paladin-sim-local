@@ -63,7 +63,6 @@ beacon_transfer = {
     "Word of Glory": "single_target",
     "Eternal Flame": "single_target",
     "Eternal Flame (HoT)": "single_target",
-    "Dawnlight (HoT)": "single_target",
     "Tyr's Deliverance": "single_target",
     "Resplendent Light": "single_target",
     "Afterimage": "single_target",
@@ -79,5 +78,6 @@ beacon_transfer = {
     "Glimmer of Light": "aoe",
     "Light's Hammer": "aoe",
     "Holy Prism": "aoe",
+    "Dawnlight (HoT)": "aoe",
     "Dawnlight (AoE)": "aoe"
 }
