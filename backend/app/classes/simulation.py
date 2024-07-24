@@ -238,7 +238,8 @@ class Simulation:
                                 caster.beacon_targets = [chosen_target] + secondary_targets                              
                                 for target in caster.beacon_targets:
                                     target.apply_buff_to_target(BeaconOfLightBuff(caster), current_time, caster=caster)
-                                
+            
+            caster.global_cooldown = 0                    
             ability.cast_healing_spell(self.paladin, targets, current_time, ability.is_heal)
             
             if ability.calculate_cast_time(caster) * 0.7 < caster.hasted_global_cooldown and divine_favor_active:
@@ -249,8 +250,6 @@ class Simulation:
             ability.try_trigger_rppm_effects(caster, targets, current_time)
             
             self.previous_ability = ability.name
-                        
-    # def apply_
                             
     def action(self):
         if self.paladin.currently_casting:
