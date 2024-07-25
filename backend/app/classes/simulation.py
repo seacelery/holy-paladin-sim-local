@@ -372,7 +372,7 @@ class Simulation:
                     saved_by_the_light.trigger_passive_heal(self.paladin, self.elapsed_time)
                     saved_by_the_light.timer = 0
                     
-        if self.paladin.ptr and self.paladin.is_talent_active("Sun's Avatar"):
+        if self.paladin.is_talent_active("Sun's Avatar"):
             if "Avenging Wrath" in self.paladin.active_auras or "Avenging Crusader" in self.paladin.active_auras or "Avenging Wrath (Awakening)" in self.paladin.active_auras or "Avenging Crusader (Awakening)" in self.paladin.active_auras:
                 suns_avatar_count = len([target for target in self.paladin.potential_healing_targets if "Sun's Avatar" in target.target_active_buffs])
                 target_count = 5 * suns_avatar_count
@@ -469,7 +469,7 @@ class Simulation:
                 self.saving_graces_timer = 0
                 self.paladin.apply_buff_to_self(SavingGraces(), self.elapsed_time)
         
-        if self.paladin.ptr and self.paladin.is_talent_active("Light of the Martyr"):   
+        if self.paladin.is_talent_active("Light of the Martyr"):   
             uptime_duration = self.encounter_length * self.light_of_the_martyr_uptime
             downtime_duration = self.encounter_length - uptime_duration
             light_of_the_martyr_intervals = 5
@@ -595,7 +595,7 @@ class Simulation:
                 self.paladin.apply_buff_to_self(AvengingCrusaderAwakening(), self.elapsed_time)
                 self.paladin.awakening_queued = False
             
-            if self.paladin.ptr and self.paladin.is_talent_active("Laying Down Arms"):    
+            if self.paladin.is_talent_active("Laying Down Arms"):    
                 if buff_name == "Holy Bulwark" or buff_name == "Sacred Weapon":
                     handle_flat_cdr(self.paladin.abilities["Lay on Hands"], 15)
                     if self.paladin.is_talent_active("Inflorescence of the Sunwell"):
@@ -675,7 +675,7 @@ class Simulation:
                         if buff_name == "Beacon of Light":
                             self.paladin.beacon_targets.remove(target)
                             
-                        if self.paladin.ptr and self.paladin.is_talent_active("Lingering Radiance") and buff_name == "Dawnlight (HoT)":
+                        if self.paladin.is_talent_active("Lingering Radiance") and buff_name == "Dawnlight (HoT)":
                             target.apply_buff_to_target(EternalFlameBuff(self.paladin, 10), self.elapsed_time, caster=self.paladin)
                         
                         update_target_buff_data(self.paladin.target_buff_breakdown, buff_name, self.elapsed_time, "expired", target.name)
@@ -758,102 +758,53 @@ class Simulation:
         ]
         
         # first spell belongs to the second
-        if self.paladin.ptr:
-            sub_spell_map = {
-                "Reclamation (Holy Shock)": "Holy Shock",
-                "Reclamation (Crusader Strike)": "Crusader Strike",
-                "Divine Revelations (Holy Light)": "Holy Light",
-                "Divine Revelations (Judgment)": "Judgment",
-                "Holy Shock (Divine Toll)": "Divine Toll",
-                "Holy Shock (Divine Resonance)": "Divine Toll",
-                "Holy Shock (Rising Sunlight)": "Divine Toll",
-                "Glimmer of Light": "Holy Shock",
-                "Glimmer of Light (Daybreak)": "Daybreak",
-                "Glimmer of Light (Rising Sunlight)": "Holy Shock (Rising Sunlight)",
-                "Glimmer of Light (Glistening Radiance (Light of Dawn))": "Light of Dawn",
-                "Glimmer of Light (Glistening Radiance (Word of Glory))": "Word of Glory",
-                "Glimmer of Light (Glistening Radiance (Eternal Flame))": "Eternal Flame",
-                "Glimmer of Light (Divine Toll)": "Holy Shock (Divine Toll)",
-                "Resplendent Light": "Holy Light",
-                "Crusader's Reprieve": "Crusader Strike",
-                "Greater Judgment": "Judgment",
-                "Judgment of Light": "Judgment",
-                "Hammer and Anvil": "Judgment",
-                "Afterimage (Word of Glory)": "Word of Glory",
-                "Afterimage (Eternal Flame)": "Eternal Flame",
-                "Barrier of Faith (Holy Shock)": "Barrier of Faith",
-                "Barrier of Faith (Flash of Light)": "Barrier of Faith",
-                "Barrier of Faith (Holy Light)": "Barrier of Faith",
-                "Blessing of Summer": "Blessing of the Seasons",
-                "Blessing of Autumn": "Blessing of the Seasons",
-                "Blessing of Winter": "Blessing of the Seasons",
-                "Blessing of Spring": "Blessing of the Seasons",
-                "Blossom of Amirdrassil Large HoT": "Blossom of Amirdrassil",
-                "Blossom of Amirdrassil Small HoT": "Blossom of Amirdrassil",
-                "Blossom of Amirdrassil Absorb": "Blossom of Amirdrassil",
-                "Veneration": "Hammer of Wrath",
-                "Golden Path": "Consecration",
-                "Seal of Mercy": "Consecration",
-                "Divine Guidance": "Consecration",
-                "Avenging Crusader (Judgment)": "Avenging Crusader",
-                "Avenging Crusader (Crusader Strike)": "Avenging Crusader",
-                "Dawnlight (HoT)": "Dawnlight",
-                "Dawnlight (AoE)": "Dawnlight",
-                "Eternal Flame (HoT)": "Eternal Flame",
-                "Sacred Weapon 1": "Sacred Weapon",
-                "Sacred Weapon 2": "Sacred Weapon",
-                "Saved by the Light (Word of Glory)": "Word of Glory",
-                "Saved by the Light (Light of Dawn)": "Light of Dawn",
-                "Saved by the Light (Eternal Flame)": "Eternal Flame",
-            }
-        else:
-            sub_spell_map = {
-                "Reclamation (Holy Shock)": "Holy Shock",
-                "Reclamation (Crusader Strike)": "Crusader Strike",
-                "Divine Revelations (Holy Light)": "Holy Light",
-                "Divine Revelations (Judgment)": "Judgment",
-                "Holy Shock (Divine Toll)": "Divine Toll",
-                "Holy Shock (Divine Resonance)": "Divine Toll",
-                "Holy Shock (Rising Sunlight)": "Daybreak",
-                "Glimmer of Light": "Holy Shock",
-                "Glimmer of Light (Daybreak)": "Daybreak",
-                "Glimmer of Light (Rising Sunlight)": "Holy Shock (Rising Sunlight)",
-                "Glimmer of Light (Glistening Radiance (Light of Dawn))": "Light of Dawn",
-                "Glimmer of Light (Glistening Radiance (Word of Glory))": "Word of Glory",
-                "Glimmer of Light (Glistening Radiance (Eternal Flame))": "Eternal Flame",
-                "Glimmer of Light (Divine Toll)": "Holy Shock (Divine Toll)",
-                "Resplendent Light": "Holy Light",
-                "Crusader's Reprieve": "Crusader Strike",
-                "Greater Judgment": "Judgment",
-                "Judgment of Light": "Judgment",
-                "Hammer and Anvil": "Judgment",
-                "Afterimage (Word of Glory)": "Word of Glory",
-                "Afterimage (Eternal Flame)": "Eternal Flame",
-                "Barrier of Faith (Holy Shock)": "Barrier of Faith",
-                "Barrier of Faith (Flash of Light)": "Barrier of Faith",
-                "Barrier of Faith (Holy Light)": "Barrier of Faith",
-                "Blessing of Summer": "Blessing of the Seasons",
-                "Blessing of Autumn": "Blessing of the Seasons",
-                "Blessing of Winter": "Blessing of the Seasons",
-                "Blessing of Spring": "Blessing of the Seasons",
-                "Blossom of Amirdrassil Large HoT": "Blossom of Amirdrassil",
-                "Blossom of Amirdrassil Small HoT": "Blossom of Amirdrassil",
-                "Blossom of Amirdrassil Absorb": "Blossom of Amirdrassil",
-                "Veneration": "Hammer of Wrath",
-                "Golden Path": "Consecration",
-                "Seal of Mercy": "Consecration",
-                "Divine Guidance": "Consecration",
-                "Avenging Crusader (Judgment)": "Avenging Crusader",
-                "Avenging Crusader (Crusader Strike)": "Avenging Crusader",
-                "Dawnlight (HoT)": "Dawnlight",
-                "Dawnlight (AoE)": "Dawnlight",
-                "Eternal Flame (HoT)": "Eternal Flame",
-                "Sacred Weapon 1": "Sacred Weapon",
-                "Sacred Weapon 2": "Sacred Weapon",
-                "Saved by the Light (Word of Glory)": "Word of Glory",
-                "Saved by the Light (Light of Dawn)": "Light of Dawn",
-                "Saved by the Light (Eternal Flame)": "Eternal Flame",
-            }
+        sub_spell_map = {
+            "Reclamation (Holy Shock)": "Holy Shock",
+            "Reclamation (Crusader Strike)": "Crusader Strike",
+            "Divine Revelations (Holy Light)": "Holy Light",
+            "Divine Revelations (Judgment)": "Judgment",
+            "Holy Shock (Divine Toll)": "Divine Toll",
+            "Holy Shock (Divine Resonance)": "Divine Toll",
+            "Holy Shock (Rising Sunlight)": "Divine Toll",
+            "Glimmer of Light": "Holy Shock",
+            "Glimmer of Light (Daybreak)": "Daybreak",
+            "Glimmer of Light (Rising Sunlight)": "Holy Shock (Rising Sunlight)",
+            "Glimmer of Light (Glistening Radiance (Light of Dawn))": "Light of Dawn",
+            "Glimmer of Light (Glistening Radiance (Word of Glory))": "Word of Glory",
+            "Glimmer of Light (Glistening Radiance (Eternal Flame))": "Eternal Flame",
+            "Glimmer of Light (Divine Toll)": "Holy Shock (Divine Toll)",
+            "Resplendent Light": "Holy Light",
+            "Crusader's Reprieve": "Crusader Strike",
+            "Greater Judgment": "Judgment",
+            "Judgment of Light": "Judgment",
+            "Hammer and Anvil": "Judgment",
+            "Afterimage (Word of Glory)": "Word of Glory",
+            "Afterimage (Eternal Flame)": "Eternal Flame",
+            "Barrier of Faith (Holy Shock)": "Barrier of Faith",
+            "Barrier of Faith (Flash of Light)": "Barrier of Faith",
+            "Barrier of Faith (Holy Light)": "Barrier of Faith",
+            "Blessing of Summer": "Blessing of the Seasons",
+            "Blessing of Autumn": "Blessing of the Seasons",
+            "Blessing of Winter": "Blessing of the Seasons",
+            "Blessing of Spring": "Blessing of the Seasons",
+            "Blossom of Amirdrassil Large HoT": "Blossom of Amirdrassil",
+            "Blossom of Amirdrassil Small HoT": "Blossom of Amirdrassil",
+            "Blossom of Amirdrassil Absorb": "Blossom of Amirdrassil",
+            "Veneration": "Hammer of Wrath",
+            "Golden Path": "Consecration",
+            "Seal of Mercy": "Consecration",
+            "Divine Guidance": "Consecration",
+            "Avenging Crusader (Judgment)": "Avenging Crusader",
+            "Avenging Crusader (Crusader Strike)": "Avenging Crusader",
+            "Dawnlight (HoT)": "Dawnlight",
+            "Dawnlight (AoE)": "Dawnlight",
+            "Eternal Flame (HoT)": "Eternal Flame",
+            "Sacred Weapon 1": "Sacred Weapon",
+            "Sacred Weapon 2": "Sacred Weapon",
+            "Saved by the Light (Word of Glory)": "Word of Glory",
+            "Saved by the Light (Light of Dawn)": "Light of Dawn",
+            "Saved by the Light (Eternal Flame)": "Eternal Flame",
+        }
         
         # INCLUDE OVERHEALING
         def include_overhealing(ability_breakdown):        
