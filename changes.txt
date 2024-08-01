@@ -1,7 +1,19 @@
-dawnlight hot & aoe nerf
-fol buff
-glistening radiance nerf
-beacon transfer nerf
-suns avatar nerf
-base talents change
-wog healing buff
+wog ef healing
+hammer damage
+cs damage
+lod healing
+blessing of dawn healing
+righteous judgment 50%
+awakening judge 40%
+awakening stacks
+tyrs healing %
+tyrs healing
+crusader's might cdr
+sanctified wrath cdr
+overflowing light %
+holy infusion damage mod
+moment of compassion %
+power of the silver hand %
+blessed assurance %
+gleaming rays %
+lingering radiation hot duration
