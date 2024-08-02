@@ -302,7 +302,7 @@ class Spell:
         if "Aura Mastery" in caster.active_auras and caster.is_talent_active("Protection of Tyr"):
             heal_amount *= 1.1
             
-        if caster.is_talent_active("Power of the Silver Hand") and "Power of the Silver Hand" in caster.active_auras:
+        if caster.is_talent_active("Power of the Silver Hand") and "Power of the Silver Hand" in caster.active_auras and self.name != "Lay on Hands":
             spell_overhealing_multiplier = (1 - caster.overhealing[self.name]) if self.name in caster.overhealing else 0
             caster.active_auras["Power of the Silver Hand Stored Healing"].stored_healing += heal_amount * 0.2 * spell_overhealing_multiplier
             caster.active_auras["Power of the Silver Hand Stored Healing"].duration = caster.active_auras["Power of the Silver Hand Stored Healing"].base_duration
@@ -311,9 +311,10 @@ class Spell:
             leech_multiplier = 0.7
             update_spell_data_heals(caster.ability_breakdown, "Leech", caster, heal_amount * (caster.leech / 100) * leech_multiplier, False)
             
-        # if "Holy Shock" in self.name:
-        #     print(f"Heal amount for {self.name}, {heal_amount}")
-        #     print(f"Calculating heal for {self.name}, {spell_power} * {self.SPELL_POWER_COEFFICIENT} * {caster.healing_multiplier} * {versatility_multiplier} * {crit_multiplier} * {mastery_multiplier} * {self.spell_healing_modifier} * {caster_crit_healing_modifier}")
+        if "Holy Shock" in self.name and "Power of the Silver Hand" in caster.active_auras:
+            print(f"Heal amount for {self.name}, {heal_amount}, {is_crit}")
+            print(f"new stored healing {caster.active_auras['Power of the Silver Hand Stored Healing'].stored_healing}")
+            # print(f"Calculating heal for {self.name}, {spell_power} * {self.SPELL_POWER_COEFFICIENT} * {caster.healing_multiplier} * {versatility_multiplier} * {crit_multiplier} * {mastery_multiplier} * {self.spell_healing_modifier} * {caster_crit_healing_modifier}")
         return heal_amount, is_crit
     
     def calculate_damage(self, caster, bonus_crit=0, bonus_versatility=0):
