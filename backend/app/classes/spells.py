@@ -133,7 +133,7 @@ class Spell:
 
         return True, spell_crit, damage_value
         
-    def cast_healing_spell(self, caster, targets, current_time, is_heal, exclude_mastery=False, ignore_spell_multiplier=False, exclude_cast=False):
+    def cast_healing_spell(self, caster, targets, current_time, is_heal, exclude_mastery=False, ignore_spell_multiplier=False, exclude_cast=False, initial_cast=True):
         if not self.can_cast(caster):         
             return False, False, 0
     
@@ -168,7 +168,7 @@ class Spell:
                      
         # add spells that cost mana and do heal       
         elif caster.mana >= self.get_mana_cost(caster) and is_heal: 
-            if self.name not in ["Tyr's Deliverance", "Light's Hammer", "Holy Shock (Divine Toll)", "Holy Shock (Rising Sunlight)", "Holy Shock (Divine Resonance)", "Flash of Light", "Golden Path", "Holy Light", "Seal of Mercy"]:
+            if self.name not in ["Tyr's Deliverance", "Light's Hammer", "Holy Shock (Divine Toll)", "Holy Shock (Rising Sunlight)", "Holy Shock (Divine Resonance)", "Flash of Light", "Golden Path", "Holy Light", "Seal of Mercy"] and initial_cast:
                 update_priority_breakdown(caster.priority_breakdown, caster, current_time, "1", self.name, self_auras, {"mana": caster.mana, "holy_power": caster.holy_power}, target_active_auras=target_auras, remaining_cooldowns=spell_cooldowns, aura_counts=total_target_aura_counts, current_stats=current_stats)    
             
             target_count = self.healing_target_count
@@ -311,9 +311,9 @@ class Spell:
             leech_multiplier = 0.7
             update_spell_data_heals(caster.ability_breakdown, "Leech", caster, heal_amount * (caster.leech / 100) * leech_multiplier, False)
             
-        if "Holy Shock" in self.name and "Power of the Silver Hand" in caster.active_auras:
-            print(f"Heal amount for {self.name}, {heal_amount}, {is_crit}")
-            print(f"new stored healing {caster.active_auras['Power of the Silver Hand Stored Healing'].stored_healing}")
+        # if "Holy Shock" in self.name and "Power of the Silver Hand" in caster.active_auras:
+        #     print(f"Heal amount for {self.name}, {heal_amount}, {is_crit}")
+        #     print(f"new stored healing {caster.active_auras['Power of the Silver Hand Stored Healing'].stored_healing}")
             # print(f"Calculating heal for {self.name}, {spell_power} * {self.SPELL_POWER_COEFFICIENT} * {caster.healing_multiplier} * {versatility_multiplier} * {crit_multiplier} * {mastery_multiplier} * {self.spell_healing_modifier} * {caster_crit_healing_modifier}")
         return heal_amount, is_crit
     
