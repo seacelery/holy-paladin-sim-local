@@ -150,7 +150,7 @@ class Simulation:
         self.paladin.healing_timeline[round(self.elapsed_time, 2)] = healing_this_second
         
         # check healing during specific auras
-        auras_to_track = set(["Avenging Wrath", "Avenging Wrath (Awakening)", "Rising Sunlight", "Blessing of Spring"])
+        auras_to_track = set(["Avenging Wrath", "Avenging Wrath (Awakening)", "Rising Sunlight", "Blessing of Spring", "Power of the Silver Hand"])
 
         # active_auras is a dictionary with aura names as keys
         active_auras = set(self.paladin.active_auras.keys())

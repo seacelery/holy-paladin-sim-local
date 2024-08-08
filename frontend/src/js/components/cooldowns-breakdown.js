@@ -3,6 +3,7 @@ import { formatThousands, formatTime, createElement } from './index.js';
 
 const createCooldownsBreakdown = (simulationData, containerCount) => {
     const cooldownsData = simulationData.results.cooldowns_breakdown;
+    console.log(cooldownsData)
 
     const displayContainer = document.getElementById(`cooldowns-breakdown-table-container-${containerCount}`);
     displayContainer.innerHTML = "";

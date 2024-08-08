@@ -285,16 +285,29 @@ class Spell:
             
         heal_amount = spell_power * self.SPELL_POWER_COEFFICIENT * caster.healing_multiplier * versatility_multiplier * crit_multiplier * mastery_multiplier * spell_healing_modifier * caster_crit_healing_modifier
         
+        # if "Holy Shock" in self.name:
+        #     print(" ")
+        #     print(self.name, is_crit)
+        #     print(f"Heal amount: {heal_amount}")
+        #     if "Power of the Silver Hand" in caster.active_auras:
+        #         print(f"Current stored healing: {caster.active_auras["Power of the Silver Hand Stored Healing"].stored_healing}")
+        
         if self.name in ["Holy Shock", "Holy Shock (Rising Sunlight)", "Holy Shock (Divine Toll)", "Holy Shock (Divine Resonance)"] and "Power of the Silver Hand Stored Healing" in caster.active_auras:
             if is_crit:
                 heal_amount += caster.active_auras["Power of the Silver Hand Stored Healing"].stored_healing * 2
             else:
                 heal_amount += caster.active_auras["Power of the Silver Hand Stored Healing"].stored_healing
             caster.active_auras["Power of the Silver Hand Stored Healing"].stored_healing = 0
+            
+        # if "Holy Shock" in self.name:
+        #     print(f"Heal amount after stored healing: {heal_amount}")
         
         # season 2 tier 2pc   
         if self.name in ["Holy Shock", "Holy Shock (Rising Sunlight)", "Holy Shock (Divine Toll)", "Holy Shock (Divine Resonance)"] and caster.set_bonuses["dragonflight_season_2"] >= 2 and is_crit:
             heal_amount *= 1.8
+            
+        # if "Holy Shock" in self.name:
+        #     print(f"Heal amount after season 2 2pc: {heal_amount}")
         
         if "Close to Heart" in caster.active_auras:
             heal_amount *= 1.04
@@ -306,6 +319,9 @@ class Spell:
             spell_overhealing_multiplier = (1 - caster.overhealing[self.name]) if self.name in caster.overhealing else 0
             caster.active_auras["Power of the Silver Hand Stored Healing"].stored_healing += heal_amount * 0.2 * spell_overhealing_multiplier
             caster.active_auras["Power of the Silver Hand Stored Healing"].duration = caster.active_auras["Power of the Silver Hand Stored Healing"].base_duration
+            
+        # if "Holy Shock" in self.name and "Power of the Silver Hand" in caster.active_auras:
+        #     print(f"New stored healing: {caster.active_auras["Power of the Silver Hand Stored Healing"].stored_healing}")
             
         if self.name in leech_abilities:   
             leech_multiplier = 0.7
