@@ -2,7 +2,7 @@ import random
 
 from .auras_buffs import SunSear
 from ..utils.leech_abilities import leech_abilities
-from ..utils.misc_functions import format_time, append_spell_heal_event, append_spell_started_casting_event, append_spell_cast_event, append_spell_damage_event, update_spell_data_heals, update_spell_data_casts, update_target_buff_data, update_priority_breakdown
+from ..utils.misc_functions import format_time, append_spell_heal_event, append_spell_started_casting_event, append_spell_cast_event, append_spell_damage_event, update_spell_data_heals, update_spell_data_casts, update_target_buff_data, update_priority_breakdown, update_self_buff_data
 from collections import defaultdict
 
 class Spell:
@@ -472,10 +472,6 @@ class Spell:
             power_of_the_silver_hand = PowerOfTheSilverHand()
             try_proc_rppm_effect(power_of_the_silver_hand, is_hasted=False, is_self_buff=True)
             
-        if caster.is_talent_active("Blessing of An'she") and (self.name in ["Eternal Flame", "Dawnlight", "Sun Sear"]):
-            blessing_of_anshe = BlessingOfAnshe(caster)
-            try_proc_rppm_effect(blessing_of_anshe, is_hasted=False, is_self_buff=True)
-            
         if caster.is_talent_active("Holy Bulwark"):
             sacred_weapon_targets = [target for target in caster.potential_healing_targets if "Sacred Weapon" in target.target_active_buffs]
             if len(sacred_weapon_targets) == 2:
@@ -567,7 +563,8 @@ class Spell:
         
         if "Unbound Changeling" in caster.trinkets:
             unbound_changeling = UnboundChangeling(caster)
-            try_proc_rppm_effect(unbound_changeling, is_self_buff=True)
+            if "Unbound Changeling" not in caster.active_auras:
+                try_proc_rppm_effect(unbound_changeling, is_hasted=False, is_self_buff=True)
             
         if "Gruesome Syringe" in caster.trinkets:
             gruesome_syringe = GruesomeSyringe(caster)
@@ -583,7 +580,8 @@ class Spell:
             
         if "Empowering Crystal of Anub'ikkaj" in caster.trinkets:
             empowering_crystal_of_anubikkaj = EmpoweringCrystalOfAnubikkaj(caster)
-            try_proc_rppm_effect(empowering_crystal_of_anubikkaj, is_hasted=False, is_self_buff=True)
+            if "Empowering Crystal of Anub'ikkaj" not in caster.active_auras:
+                try_proc_rppm_effect(empowering_crystal_of_anubikkaj, is_hasted=False, is_self_buff=True)
         
         if "Emerald Coach's Whistle" in caster.trinkets:
             emerald_coachs_whistle = EmeraldCoachsWhistle(caster)
