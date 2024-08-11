@@ -78,6 +78,7 @@ class Paladin:
         self.active_auras = {}
         self.gem_counts = {}
         self.gem_types = {}
+        self.gems = []
         self.total_elemental_gems = 0
         
         if equipment_data:
@@ -993,6 +994,7 @@ class Paladin:
         
         return_enchants_stats(self, formatted_enchants, bonus_effect_enchants, stat_values_from_equipment)
         return_gem_stats(self, gems_from_equipment, stat_values_from_equipment)
+        self.gems = gems_from_equipment
         
         if self.ptr:
             stat_values_from_equipment["intellect"] += 17647
