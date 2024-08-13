@@ -1,18 +1,5 @@
-healing:
-holy Light
-wog/ef
-touch of light
-judgment of light
-flash of light
-holy shock
-merciful auras
-truth prevails
-tyrs deliverance
-dawnlight
-ef hot
-sun sear
-suns avatar
-holy prism
-
 damage:
-crusader strike
+cs
+
+misc:
+flasks secondary stats nerfed
