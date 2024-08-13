@@ -105,6 +105,19 @@ const createPriorityBreakdown = (simulationData, containerCount) => {
         };
         playerAurasData["Sureki Zealot's Insignia"] = {"applied_duration": 12, "duration": surekiZealotsInsigniaHighestDuration, "stacks": surekiZealotsInsigniaCount};
 
+        let araKaraSacbroodCount = 0;
+        let araKaraSacbroodHighestDuration = 0;
+        for (let aura in playerAurasData) {
+            if (aura.includes("Ara-Kara Sacbrood ")) { 
+                araKaraSacbroodCount += 1;
+                if (playerAurasData[aura].duration > araKaraSacbroodHighestDuration) {
+                    araKaraSacbroodHighestDuration = playerAurasData[aura].duration;
+                };
+                delete playerAurasData[aura];
+            };
+        };
+        playerAurasData["Ara-Kara Sacbrood"] = {"applied_duration": 60, "duration": araKaraSacbroodHighestDuration, "stacks": araKaraSacbroodCount};
+
         for (const auraName in playerAurasData) {
             if (excludedAuras.includes(auraName)) {
                 continue;
