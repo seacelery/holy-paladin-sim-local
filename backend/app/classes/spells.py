@@ -404,7 +404,8 @@ class Spell:
         from .spells_passives import (
             TouchOfLight, EmbraceOfAkunda, DreamingDevotion, ChirpingRune, LarodarsFieryReverie,
             MagazineOfHealingDarts, BronzedGripWrappings, SacredWeapon, AuthorityOfFieryResolve,
-            DivineInspiration, RiteOfAdjurationSpell, ScrapsingersSymphony, GruesomeSyringe
+            DivineInspiration, RiteOfAdjurationSpell, ScrapsingersSymphony, GruesomeSyringe,
+            BeledarsGrace
         )
         
         from .auras_buffs import (
@@ -533,6 +534,10 @@ class Spell:
         if "Chirping Rune" in caster.active_auras:
             chirping_rune = ChirpingRune(caster)
             try_proc_rppm_effect(chirping_rune, is_flat_healing=True)
+            
+        if "Oil of Beledar's Grace" in caster.active_auras:
+            beledars_grace = BeledarsGrace(caster)
+            try_proc_rppm_effect(beledars_grace, is_flat_healing=True)
             
         if caster.race == "Zandalari Troll":
             embrace_of_paku = EmbraceOfPaku()
@@ -725,7 +730,7 @@ class Spell:
                 blossom_proc.trigger_proc(caster, targets, current_time)
                 
         if caster.is_trinket_equipped("Spymaster's Web"):
-            if self.name in ["Judgment", "Crusader Strike", "Consecration"] and caster.conditional_effect_cooldowns.get("Spymaster's Web", 0) <= 0:
+            if self.name in ["Judgment", "Crusader Strike", "Hammer of Wrath", "Consecration"] and caster.conditional_effect_cooldowns.get("Spymaster's Web", 0) <= 0:
                 caster.conditional_effect_cooldowns["Spymaster's Web"] = 6
                 if "Spymaster's Web Stacks" not in caster.active_auras:
                     caster.apply_buff_to_self(SpymastersWebStacks(caster), current_time, stacks_to_apply=1, max_stacks=40)

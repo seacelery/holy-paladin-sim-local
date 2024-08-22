@@ -1,5 +1,4 @@
-damage:
-cs
-
 misc:
-flasks secondary stats nerfed
+arcane intellect 5%->3%
+oil of beledar's grace implemented
+saving graces 15%->10%
