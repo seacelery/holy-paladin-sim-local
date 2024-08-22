@@ -149,6 +149,7 @@ const buffsToIconsMap = {
     "Sea Star": "https://render.worldofwarcraft.com/eu/icons/56/inv_datacrystal05.jpg",
     "Sustaining Alchemist Stone": "https://render.worldofwarcraft.com/eu/icons/56/inv_10_alchemy_alchemystone_color2.jpg",
     "Alacritous Alchemist Stone": "https://render.worldofwarcraft.com/eu/icons/56/inv_10_alchemy_alchemystone_color1.jpg",
+    "Algari Alchemist Stone": "https://wow.zamimg.com/images/wow/icons/large/inv_10_alchemy_alchemystone_color4.jpg",
     "Neltharion's Call to Chaos": "https://render.worldofwarcraft.com/eu/icons/56/inv_10_dungeonjewelry_dragon_trinket_5_red.jpg",
     "Screaming Black Dragonscale": "https://render.worldofwarcraft.com/eu/icons/56/inv_misc_rubysanctum2.jpg",
     "Rashok's Molten Heart": "https://render.worldofwarcraft.com/eu/icons/56/inv_misc_trinket6oih_orb4.jpg",

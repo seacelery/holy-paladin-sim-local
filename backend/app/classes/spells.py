@@ -418,7 +418,7 @@ class Spell:
             RashoksMoltenHeart, EmeraldCoachsWhistle, VoiceFromBeyond, BlessingOfAnshe, HarvestersEdict,
             EmpoweringCrystalOfAnubikkaj, UnboundChangeling, FateweavedNeedle,
             AuthorityOfRadiantPower, CouncilsGuile, StormridersFury, StoneboundArtistry, OathswornsTenacity,
-            SurekiZealotsInsignia, AraKaraSacbrood
+            SurekiZealotsInsignia, AraKaraSacbrood, AlgariAlchemistStoneBuff
         )
         
         def try_proc_rppm_effect(effect, is_hasted=True, is_heal=False, is_self_buff=False, exclude_mastery=False, is_flat_healing=False, is_other_effect=False):
@@ -634,6 +634,10 @@ class Spell:
         if "Alacritous Alchemist Stone" in caster.trinkets:
             alacritous_alchemist_stone = AlacritousAlchemistStoneBuff(caster)
             try_proc_rppm_effect(alacritous_alchemist_stone, is_self_buff=True)
+            
+        if "Algari Alchemist Stone" in caster.trinkets:
+            algari_alchemist_stone = AlgariAlchemistStoneBuff(caster)
+            try_proc_rppm_effect(algari_alchemist_stone, is_self_buff=True)
             
         if "Pip's Emerald Friendship Badge" in caster.trinkets:
             pips_emerald_friendship_badge = PipsEmeraldFriendshipBadge(caster)

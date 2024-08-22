@@ -1346,6 +1346,8 @@ class SlumberingSoulSerumBuff(Buff):
         
     def apply_effect(self, caster, current_time=None):
         slumbering_soul_serum_mana_gain = 375000
+        if "Algari Alchemist Stone" in caster.trinkets:
+            slumbering_soul_serum_mana_gain *= 1.4
         caster.mana += slumbering_soul_serum_mana_gain
         update_mana_gained(caster.ability_breakdown, self.name, slumbering_soul_serum_mana_gain)
         caster.is_occupied = True
@@ -2268,6 +2270,25 @@ class AlacritousAlchemistStoneBuff(Buff):
         caster.abilities["Potion"].shared_cooldown_end_time -= 10
         caster.abilities["Aerated Mana Potion"].remaining_cooldown -= 10
         caster.abilities["Elemental Potion of Ultimate Power"].remaining_cooldown -= 10
+        
+    def remove_effect(self, caster, current_time=None):
+        caster.spell_power -= caster.get_effective_spell_power(self.trinket_first_value)
+        
+
+class AlgariAlchemistStoneBuff(Buff):
+    
+    BASE_PPM = 1
+    
+    def __init__(self, caster):
+        super().__init__("Algari Alchemist Stone", 15, base_duration=15)
+        trinket_effect = caster.trinkets[self.name]["effect"]
+        trinket_values = [int(value.replace(",", "")) for value in re.findall(r"\*(\d+,?\d+)", trinket_effect)]
+        
+        # intellect
+        self.trinket_first_value = trinket_values[0]
+        
+    def apply_effect(self, caster, current_time=None):        
+        caster.spell_power += caster.get_effective_spell_power(self.trinket_first_value)
         
     def remove_effect(self, caster, current_time=None):
         caster.spell_power -= caster.get_effective_spell_power(self.trinket_first_value)
